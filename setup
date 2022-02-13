@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+
+# Running ./setup creates links in the
+# qmk_firmware directory keymaps or keyboards
+# folders so that we can keep custom keymaps/boards
+# under separate version control, while pulling changes
+# from QMK itself.
+#
+# Build via-enabled basic hwcrkbd with:
+# qmk compile -kb hwcrkbd/rev1 -km bsag-via
+# or for my custom keymap, no via:
+# qmk compile -kb hwcrkbd/rev1 -km bsag
+#
+# Ferris-emulating keymap for 3x6 crkbd
+# qmk compile -kb crkbd/rev1 -km mini3x6
+#
+# Actual keymap for 3x5 ferris sweep
+# qmk compile -kb ferris/sweep -km mini3x5
+
+MY_HOME=`echo $HOME`
+QMK_HOME="$MY_HOME/git/github/qmk_firmware"
+
+# Gets the full path to this keymaps repo's directory
+REPO_DIR="$(realpath "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )")"
+
+function symlink_hwcrkbd_custom_keymap() {
+  local source_keymap="$REPO_DIR/hwcrkbd"
+  local symlink_destination="$QMK_HOME/keyboards/hwcrkbd"
+
+  if [ ! -d "$symlink_destination" ]; then
+    echo "Symlinking keymap"
+    ln -s "$source_keymap" "$symlink_destination"
+  else
+    echo "Keymap already in place, nothing to do"
+  fi
+}
+
+function symlink_mini3x6_custom_keymap() {
+  local source_keymap="$REPO_DIR/mini3x6"
+  local symlink_destination="$QMK_HOME/keyboards/crkbd/keymaps/mini3x6"
+
+  if [ ! -d "$symlink_destination" ]; then
+    echo "Symlinking crkbd 3x6 keymap"
+    ln -s "$source_keymap" "$symlink_destination"
+  else
+    echo "Keymap already in place, nothing to do"
+  fi
+}
+
+function symlink_mini3x5_custom_keymap() {
+  local source_keymap="$REPO_DIR/mini3x5"
+  local symlink_destination="$QMK_HOME/keyboards/ferris/keymaps/mini3x5"
+
+  if [ ! -d "$symlink_destination" ]; then
+    echo "Symlinking Ferris mini3x5 keymap"
+    ln -s "$source_keymap" "$symlink_destination"
+  else
+    echo "Keymap already in place, nothing to do"
+  fi
+}
+
+symlink_hwcrkbd_custom_keymap
+symlink_mini3x6_custom_keymap
+symlink_mini3x5_custom_keymap
