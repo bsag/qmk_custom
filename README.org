@@ -1,0 +1,41 @@
+#+title: My custom QMK keymaps
+#+author: bsag
+#+email: butshesagirl@rousette.org.uk
+
+* Background
+This repository is for my custom QMK code for both keymaps (i.e. just the
+keyboard layout and features), as well as code for a handwired keyboard (the
+matrix and keyboard layout).
+
+I keep this as as separate directory to the forked =qmk_firmware= directory and
+use the =setup= script to create symlinks into the relevant directories in
+=qmk_firmware= so that I can build the firmware for my boards and layouts. I
+shamelessly stole this idea from someone else's QMK configs, but I can't remember
+which setup now, I'm afraid. I'm happy to include a link if someone recognises
+it.
+
+* hwcrkbd
+This is a handwired keyboard I built based around the Corne keyboard. It has
+OLED screens and mini-E RGB LEDs.
+
+* mini3x5
+This is a keymap for a 34 key [[https://github.com/davidphilipbarr/Sweep][Ferris Sweep
+v2.1]] which is a super-compact 3x5+2 Kailh Choc keyboard. I've taken inspiration
+from a lot of other users' keymaps:
+
+- One-shot mods and single key app switching from [[https://github.com/callum-oakley/qmk_firmware/tree/master/users/callum][callum]]
+- [[https://github.com/treeman/qmk_firmware/tree/master/keyboards/splitkb/kyria/keymaps/treeman][Layer arrangement]] and 'numword' setup from [[https://www.jonashietala.se/blog/2021/06/03/the-t-34-keyboard-layout/#base-layer][Jonas Hietala]]
+- 'capsword' setup from [[https://getreuer.info/posts/keyboards/caps-word/index.html][Pascal Getreuer]]
+
+...and probably many others that I've forgotten about.
+
+The layout uses combos on the baselayer to replace keys like enter and escape
+that do not fit on a small keyboard, one-shot mods/layers and a combo to
+activate a 'numword' layer which automatically de-activates when a non-numerical
+character is typed.
+
+* mini3x6
+This keymap is for a 42 key Corne keyboard, but only maps the 34 keys shared
+with the Ferris. It's a temporary measure so that I can have the same layout on
+keyboards at home and work, until I've had a chance to build another Ferris.
+Likely to be temporary and not updated.
