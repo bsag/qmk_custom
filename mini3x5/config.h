@@ -18,10 +18,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #pragma once
 // Define number of combos to be used
 
-// autoshift settings
-#define NO_AUTO_SHIFT_NUMERIC
-#define NO_AUTO_SHIFT_SPECIAL
-
 // Underglow configuration
 #ifdef RGBLIGHT_ENABLE
   #define RGBLIGHT_ANIMATIONS

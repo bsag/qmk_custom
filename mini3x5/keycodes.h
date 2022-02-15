@@ -11,6 +11,10 @@
 #define WNAV MO(_WNAV)
 #define FUN OSL(_FUN)
 #define NAV_SPC LT(_NAV, KC_SPC)
+// base layer shift keys
+#define SH_L LSFT_T(KC_Z)
+#define SH_R RSFT_T(KC_SLSH)
+
 // shortcuts
 #define M_UNDO G(KC_Z)
 #define M_CUT G(KC_X)
