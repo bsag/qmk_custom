@@ -14,6 +14,9 @@
 // base layer shift keys
 #define SH_L LSFT_T(KC_Z)
 #define SH_R RSFT_T(KC_SLSH)
+// Beakl layer shift keys
+#define SHL_B LSFT_T(KC_J)
+#define SHR_B RSFT_T(KC_V)
 
 // shortcuts
 #define M_UNDO G(KC_Z)
@@ -36,6 +39,7 @@
 
 enum layers {
 	_DEF,
+	_BKL,
 	_NUM,
 	_NAV,
 	_LMOD,

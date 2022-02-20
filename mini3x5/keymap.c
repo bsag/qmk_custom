@@ -16,6 +16,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 					          LMOD, NAV_SPC,  KC_BSPC, RMOD
 							   ),
 
+	[_BKL] = LAYOUT_split_3x5_2(
+			KC_Q,  KC_H,    KC_O,    KC_U, KC_X,         KC_G, KC_C, KC_R,    KC_F,   KC_Z,
+			KC_Y,  KC_I,    KC_E,    KC_A, KC_DOT,       KC_D, KC_S, KC_T,    KC_N,   KC_B,
+			SHL_B, KC_SLSH, KC_COMM, KC_K, KC_QUOT,      KC_W, KC_M, KC_L,    KC_P,   SHR_B,
+					                     LMOD, NAV_SPC,      KC_BSPC, RMOD
+							   ),
+
 	[_NUM] = LAYOUT_split_3x5_2(
 			KC_NO,   KC_NO,   KC_NO,  KC_NO,  KC_PERC,   KC_PLUS, KC_7, KC_8, KC_9, KC_MINS,
 			OS_SHFT, OS_CTRL, OS_ALT, OS_CMD, KC_EQL,    KC_DOT,  KC_4, KC_5, KC_6, KC_0,
@@ -45,10 +52,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 								),
 
 	[_WNAV] = LAYOUT_split_3x5_2(
-			KC_NO, KC_NO,  KC_NO,  KC_NO,  KC_NO,     HOOK,   LHLF,       FULL,       RHLF,       KC_NO,
-			KC_NO, KC_NO,  KC_NO,  KC_NO,  KC_NO,     KC_NO,  HYPR(KC_4), HYPR(KC_5), HYPR(KC_6), KC_NO,
-			KC_NO, KC_NO,  KC_NO,  KC_NO,  KC_NO,     KC_NO,  HYPR(KC_1), HYPR(KC_2), HYPR(KC_3), KC_NO,
-			                     KC_TRNS,  KC_TRNS,   CLEAR,  KC_TRNS
+			DF(_DEF), KC_NO,  KC_NO,  KC_NO,  KC_NO,     HOOK,   LHLF,       FULL,       RHLF,       KC_NO,
+			KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_NO,     KC_NO,  HYPR(KC_4), HYPR(KC_5), HYPR(KC_6), KC_NO,
+			DF(_BKL), KC_NO,  KC_NO,  KC_NO,  KC_NO,     KC_NO,  HYPR(KC_1), HYPR(KC_2), HYPR(KC_3), KC_NO,
+			                     KC_TRNS,  KC_TRNS,      CLEAR,  KC_TRNS
 								),
 
 	[_FUN] = LAYOUT_split_3x5_2(
@@ -60,45 +67,70 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 enum combo_events {
-  CAPS_COMBO,
-  ENTER_COMBO,
-  TAB_COMBO,
-  DQUO_COMBO,
-  QUES_COMBO,
-  CTRLC_COMBO,
-  ESC_COMBO,
+  // qwerty layer combos
+  CAPS_COMBO_Q,
+  ENTER_COMBO_Q,
+  TAB_COMBO_Q,
+  DQUO_COMBO_Q,
+  QUES_COMBO_Q,
+  CTRLC_COMBO_Q,
+  ESC_COMBO_Q,
   NUM_COMBO,
+  // beakl layer combos
+  CAPS_COMBO_B,
+  ENTER_COMBO_B,
+  TAB_COMBO_B,
+  DQUO_COMBO_B,
+  QUES_COMBO_B,
+  CTRLC_COMBO_B,
+  ESC_COMBO_B,
   // Other combos...
   COMBO_LENGTH
 };
 uint16_t COMBO_LEN = COMBO_LENGTH;
-
-const uint16_t PROGMEM caps_combo[] = {KC_F, KC_J, COMBO_END};
-const uint16_t PROGMEM enter_combo[] = {KC_J, KC_K, COMBO_END};
-const uint16_t PROGMEM tab_combo[] = {KC_F, KC_D, COMBO_END};
-const uint16_t PROGMEM dquo_combo[] = {KC_F, KC_S, COMBO_END};
-const uint16_t PROGMEM ques_combo[] = {KC_J, KC_L, COMBO_END};
+// qwerty combos
+const uint16_t PROGMEM caps_combo_q[] = {KC_F, KC_J, COMBO_END};
+const uint16_t PROGMEM enter_combo_q[] = {KC_J, KC_K, COMBO_END};
+const uint16_t PROGMEM tab_combo_q[] = {KC_F, KC_D, COMBO_END};
+const uint16_t PROGMEM dquo_combo_q[] = {KC_F, KC_S, COMBO_END};
+const uint16_t PROGMEM ques_combo_q[] = {KC_J, KC_L, COMBO_END};
 // Ctrl-c combo mostly for Emacs
-const uint16_t PROGMEM ctrlc_combo[] = {KC_J, KC_K, KC_L, COMBO_END};
-const uint16_t PROGMEM esc_combo[] = {KC_F, KC_D, KC_S, COMBO_END};
+const uint16_t PROGMEM ctrlc_combo_q[] = {KC_J, KC_K, KC_L, COMBO_END};
+const uint16_t PROGMEM esc_combo_q[] = {KC_F, KC_D, KC_S, COMBO_END};
 const uint16_t PROGMEM num_combo[] = {NAV_SPC, KC_BSPC, COMBO_END};
-
+// beakl combos
+const uint16_t PROGMEM caps_combo_b[] = {KC_A, KC_S, COMBO_END};
+const uint16_t PROGMEM enter_combo_b[] = {KC_S, KC_T, COMBO_END};
+const uint16_t PROGMEM tab_combo_b[] = {KC_E, KC_A, COMBO_END};
+const uint16_t PROGMEM dquo_combo_b[] = {KC_I, KC_A, COMBO_END};
+const uint16_t PROGMEM ques_combo_b[] = {KC_S, KC_N, COMBO_END};
+// Ctrl-c combo mostly for Emacs
+const uint16_t PROGMEM ctrlc_combo_b[] = {KC_S, KC_T, KC_N, COMBO_END};
+const uint16_t PROGMEM esc_combo_b[] = {KC_I, KC_E, KC_A, COMBO_END};
 
 combo_t key_combos[] = {
-  [CAPS_COMBO] = COMBO_ACTION(caps_combo),
-  [ENTER_COMBO] = COMBO(enter_combo, KC_ENT),
-  [TAB_COMBO] = COMBO(tab_combo, KC_TAB),
-  [DQUO_COMBO] = COMBO(dquo_combo, KC_DQUO),
-  [QUES_COMBO] = COMBO(ques_combo, KC_QUES),
-  [CTRLC_COMBO] = COMBO(ctrlc_combo, LCTL(KC_C)),
-  [ESC_COMBO] = COMBO(esc_combo, KC_ESC),
-  [NUM_COMBO] = COMBO(num_combo, NUMWORD)
+  [CAPS_COMBO_Q] = COMBO_ACTION(caps_combo_q),
+  [ENTER_COMBO_Q] = COMBO(enter_combo_q, KC_ENT),
+  [TAB_COMBO_Q] = COMBO(tab_combo_q, KC_TAB),
+  [DQUO_COMBO_Q] = COMBO(dquo_combo_q, KC_DQUO),
+  [QUES_COMBO_Q] = COMBO(ques_combo_q, KC_QUES),
+  [CTRLC_COMBO_Q] = COMBO(ctrlc_combo_q, LCTL(KC_C)),
+  [ESC_COMBO_Q] = COMBO(esc_combo_q, KC_ESC),
+  [NUM_COMBO] = COMBO(num_combo, NUMWORD),
   // Other combos...
+  [CAPS_COMBO_B] = COMBO_ACTION(caps_combo_b),
+  [ENTER_COMBO_B] = COMBO(enter_combo_b, KC_ENT),
+  [TAB_COMBO_B] = COMBO(tab_combo_b, KC_TAB),
+  [DQUO_COMBO_B] = COMBO(dquo_combo_b, KC_DQUO),
+  [QUES_COMBO_B] = COMBO(ques_combo_b, KC_QUES),
+  [CTRLC_COMBO_B] = COMBO(ctrlc_combo_b, LCTL(KC_C)),
+  [ESC_COMBO_B] = COMBO(esc_combo_b, KC_ESC),
 };
 
 void process_combo_event(uint16_t combo_index, bool pressed) {
   switch(combo_index) {
-    case CAPS_COMBO:
+    case CAPS_COMBO_Q:
+    case CAPS_COMBO_B:
       if (pressed) {
         caps_word_set(true);  // Activate Caps Word!
       }
