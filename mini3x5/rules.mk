@@ -6,4 +6,3 @@ AUTO_SHIFT_ENABLE = no
 SRC += caps_word.c
 SRC += oneshot.c
 SRC += swapper.c
-SRC += layermodes.c

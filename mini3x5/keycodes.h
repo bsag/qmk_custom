@@ -6,17 +6,11 @@
 #include "oneshot.h"
 
 // Layer keys
-#define LMOD OSL(_LMOD)
-#define RMOD OSL(_RMOD)
-#define WNAV MO(_WNAV)
-#define FUN OSL(_FUN)
+#define NUM OSL(_NUM)
+#define SYM OSL(_SYM)
+#define WNAV MO(_WNAV) // Workspace navigation and media
+#define FUN MO(_FUN) // Fkeys and mods only
 #define NAV_SPC LT(_NAV, KC_SPC)
-// base layer shift keys
-#define SH_L LSFT_T(KC_Z)
-#define SH_R RSFT_T(KC_SLSH)
-// Beakl layer shift keys
-#define SHL_B LSFT_T(KC_J)
-#define SHR_B RSFT_T(KC_V)
 
 // shortcuts
 #define M_UNDO G(KC_Z)
@@ -38,12 +32,11 @@
 #define PMIN LALT(KC_PLUS) // plus/minus symbol
 
 enum layers {
-	_DEF,
 	_BKL,
+	_DEF,
 	_NUM,
+	_SYM,
 	_NAV,
-	_LMOD,
-	_RMOD,
 	_WNAV,
 	_FUN,
 };
@@ -57,7 +50,6 @@ enum keycodes {
 
 	NUMWORD,
 
-	CANCEL,
 	CLEAR,
 
 	SW_APP,
