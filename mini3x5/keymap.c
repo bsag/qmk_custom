@@ -23,16 +23,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 							   ),
 
 	[_NUM] = LAYOUT_split_3x5_2(
-			KC_NO,   KC_NO,   KC_NO,  KC_NO,  KC_PERC,   KC_PLUS, KC_7, KC_8, KC_9, KC_MINS,
-			OS_SHFT, OS_CTRL, OS_ALT, OS_CMD, KC_EQL,    KC_DOT,  KC_4, KC_5, KC_6, KC_0,
-			KC_NO,   KC_NO,   KC_NO,  KC_NO,  KC_UNDS,   KC_ASTR, KC_1, KC_2, KC_3, KC_SLSH,
-			                        KC_TRNS,  KC_TRNS,   CLEAR, FUN
+			KC_NO,   KC_NO,   KC_NO,  KC_COLN,  KC_PERC,   KC_PLUS, KC_7, KC_8, KC_9, KC_MINS,
+			OS_SHFT, OS_CTRL, OS_ALT, OS_CMD,   KC_EQL,    KC_DOT,  KC_4, KC_5, KC_6, KC_0,
+			KC_NO,   KC_NO,   KC_NO,  KC_NO,    KC_UNDS,   KC_ASTR, KC_1, KC_2, KC_3, KC_SLSH,
+			                        KC_TRNS,    KC_TRNS,   KC_TRNS, FUN
 								),
 
 	[_SYM] = LAYOUT_split_3x5_2(
-			KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,     GBPD,  KC_AMPR, KC_ASTR, KC_UNDS, PMIN,
+			KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,     GBPD,  KC_AMPR, KC_ASTR, KC_UNDS, KC_MINS,
 			KC_PIPE, KC_SCLN, KC_EQL, KC_COLN,  KC_TILD,     KC_NO, OS_CMD,  OS_ALT,  OS_CTRL, OS_SHFT,
-			KC_LT,   KC_GT,   KC_NO,  KC_NO,    KC_GRV,      KC_NO, KC_MINS, KC_CIRC, KC_PLUS, KC_BSLS,
+			KC_LT,   KC_GT,   KC_NO,  KC_NO,    KC_GRV,      KC_NO, PMIN,    KC_CIRC, KC_PLUS, KC_BSLS,
 			                           FUN,     KC_TRNS,     CLEAR, KC_TRNS
 								),
 
@@ -45,9 +45,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 							   ),
 
 	[_WNAV] = LAYOUT_split_3x5_2(
-			DF(_DEF), KC_VOLD, KC_MUTE, KC_VOLU, KC_NO,     HOOK,   LHLF,       FULL,       RHLF,       KC_NO,
+			RESET,    KC_VOLD, KC_MUTE, KC_VOLU, KC_NO,     HOOK,   LHLF,       FULL,       RHLF,       KC_NO,
 			KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_NO,     KC_NO,  HYPR(KC_4), HYPR(KC_5), HYPR(KC_6), KC_NO,
-			DF(_BKL), KC_MPRV, KC_MPLY, KC_MNXT, KC_NO,     KC_NO,  HYPR(KC_1), HYPR(KC_2), HYPR(KC_3), KC_NO,
+			TG(_DEF), KC_MPRV, KC_MPLY, KC_MNXT, KC_NO,     KC_NO,  HYPR(KC_1), HYPR(KC_2), HYPR(KC_3), KC_NO,
 			                          KC_TRNS,  KC_TRNS,    KC_TRNS,  KC_TRNS
 								),
 
