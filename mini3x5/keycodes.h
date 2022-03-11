@@ -27,6 +27,15 @@
 #define LHLF HYPR(KC_J)
 #define RHLF HYPR(KC_L)
 #define FULL HYPR(KC_K)
+// workspace shortcuts
+#define W1 HYPR(KC_1)
+#define W2 HYPR(KC_2)
+#define W3 HYPR(KC_3)
+#define W4 HYPR(KC_4)
+#define W5 HYPR(KC_5)
+#define W6 HYPR(KC_6)
+// to qwerty layer
+#define TG_QWTY TG(_DEF)
 // awkward symbols to type
 #define GBPD LALT(KC_3) // UK pound sign
 #define PMIN LALT(KC_PLUS) // plus/minus symbol
