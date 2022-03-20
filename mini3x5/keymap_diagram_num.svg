@@ -82,13 +82,19 @@
 
     .kc_up, .kc_down, .kc_left, .kc_right,
     .kc_ent, .kc_bspc, .os_caps, .kc_esc,
+    .kc_lsft, .nav_spc,
+    .kc_exlm, .kc_at, .kc_hash, .kc_dlr, .kc_perc,
+    .kc_ampr, .kc_astr, .kc_unds, .kc_mins,
+    .kc_pipe, .kc_scln, .kc_eql, .kc_coln, .kc_tild,
+    .kc_lt, .kc_gt, .kc_grv, .kc_circ, .kc_plus, .kc_bsls,
+    .kc_quot, .kc_dot, .kc_comm, .kc_slsh,
     .os_shft, .os_ctrl, .os_alt, .os_cmd,
-    .kc_mac_spotlight, .kc_pgup, .kc_pgdown,
+    .kc_mac_spotlight, .kc_pgup, .kc_pgdn,
     .kc_mac_undo, .kc_mac_redo, .kc_tab,
     .kc_mac_cut, .kc_spc, .kc_mac_lock_scrn,
     .kc_brightness_up, .kc_brightness_down,
-    .kc_audio_vol_up, .kc_audio_vol_down, .kc_audio_mute,
-    .kc_media_play_pause, .kc_media_prev_track, .kc_media_next_track {
+    .kc_volu, .kc_vold, .kc_mute,
+    .kc_mply, .kc_mprv, .kc_mnxt {
     	font-size: 18px;
     }
 
@@ -189,7 +195,7 @@
 </foreignObject>
 
 <foreignObject x="221" y="14" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_COLN" class="kc_coln"><div class="glyph">&#58;</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_NO" class="kc_no"><div class="glyph"></div></div>
 </foreignObject>
 
 <foreignObject x="290" y="14" width="65" height="55" class="text-container">
@@ -253,7 +259,7 @@
 </foreignObject>
 
 <foreignObject x="671" y="73" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_0" class="kc_0"><div class="glyph">0</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_COLN" class="kc_coln"><div class="glyph">&#58;</div></div>
 </foreignObject>
 
 <foreignObject x="14" y="132" width="65" height="55" class="text-container">
@@ -305,7 +311,7 @@
 </foreignObject>
 
 <foreignObject x="395" y="211" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Shift (KC_TRNS)" class="transparent kc_lsft"><div class="glyph">&#8679;</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_0" class="kc_0"><div class="glyph">0</div></div>
 </foreignObject>
 
 <foreignObject x="464" y="211" width="65" height="55" class="text-container">

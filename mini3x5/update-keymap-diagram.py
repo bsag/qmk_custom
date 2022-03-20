@@ -160,13 +160,19 @@ svg_header = '''<svg width="${svg_width}" height="${svg_height}" viewBox="0 0 ${
 
     .kc_up, .kc_down, .kc_left, .kc_right,
     .kc_ent, .kc_bspc, .os_caps, .kc_esc,
+    .kc_lsft, .nav_spc,
+    .kc_exlm, .kc_at, .kc_hash, .kc_dlr, .kc_perc,
+    .kc_ampr, .kc_astr, .kc_unds, .kc_mins,
+    .kc_pipe, .kc_scln, .kc_eql, .kc_coln, .kc_tild,
+    .kc_lt, .kc_gt, .kc_grv, .kc_circ, .kc_plus, .kc_bsls,
+    .kc_quot, .kc_dot, .kc_comm, .kc_slsh,
     .os_shft, .os_ctrl, .os_alt, .os_cmd,
-    .kc_mac_spotlight, .kc_pgup, .kc_pgdown,
+    .kc_mac_spotlight, .kc_pgup, .kc_pgdn,
     .kc_mac_undo, .kc_mac_redo, .kc_tab,
     .kc_mac_cut, .kc_spc, .kc_mac_lock_scrn,
     .kc_brightness_up, .kc_brightness_down,
-    .kc_audio_vol_up, .kc_audio_vol_down, .kc_audio_mute,
-    .kc_media_play_pause, .kc_media_prev_track, .kc_media_next_track {
+    .kc_volu, .kc_vold, .kc_mute,
+    .kc_mply, .kc_mprv, .kc_mnxt {
     	font-size: 18px;
     }
 
@@ -334,7 +340,7 @@ key_names = {
     "W4": {"label": "W4", "title": ""},
     "W5": {"label": "W5", "title": ""},
     "W6": {"label": "W6", "title": ""},
-    "TG_QWTY": {"label": "To DEF", "title": ""},
+    "TG_QWTY": {"label": "To QWERTY", "title": ""},
     "KC_HOME": {"label": "Home", "title": ""},
     "KC_END": {"label": "End", "title": ""},
     "KC_DEL": {"label": "Del", "title": ""},
@@ -354,7 +360,7 @@ key_names = {
     "NAV_SPC": {"label": "&#9251;", "title": ""},
     "NUM": {"label": "Num", "title": ""},
     "SYM": {"label": "Sym", "title": ""},
-    "WNAV": {"label": "Wspace", "title": ""},
+    "WNAV": {"label": "Work space", "title": ""},
     "FUN": {"label": "Fun", "title": ""},
     "KC_VOLD": {"label": "&#128265;", "title": "Volume Down"},
     "KC_MUTE": {"label": "&#128263;", "title": "Mute"},

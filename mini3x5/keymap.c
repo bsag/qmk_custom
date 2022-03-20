@@ -9,9 +9,9 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_BKL] = LAYOUT_split_3x5_2(
-			KC_Q,  KC_H,    KC_O,    KC_U, KC_X,         KC_G, KC_C, KC_R,    KC_F,   KC_Z,
-			KC_Y,  KC_I,    KC_E,    KC_A, KC_DOT,       KC_D, KC_S, KC_T,    KC_N,   KC_B,
-			KC_J,  KC_SLSH, KC_COMM, KC_K, KC_QUOT,      KC_W, KC_M, KC_L,    KC_P,   KC_V,
+			KC_Q,  KC_Y,    KC_O,    KC_U, KC_X,         KC_G, KC_C, KC_M,    KC_R,   KC_Z,
+			KC_H,  KC_I,    KC_E,    KC_A, KC_DOT,       KC_D, KC_S, KC_T,    KC_N,   KC_B,
+			KC_J,  KC_SLSH, KC_COMM, KC_K, KC_QUOT,      KC_W, KC_F, KC_L,    KC_P,   KC_V,
 					                     NUM, NAV_SPC,       KC_LSFT, SYM
 							   ),
 
@@ -23,10 +23,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 							   ),
 
 	[_NUM] = LAYOUT_split_3x5_2(
-			KC_NO,   KC_NO,   KC_NO,  KC_COLN,  KC_PERC,   KC_PLUS, KC_7, KC_8, KC_9, KC_MINS,
-			OS_SHFT, OS_CTRL, OS_ALT, OS_CMD,   KC_EQL,    KC_DOT,  KC_4, KC_5, KC_6, KC_0,
+			KC_NO,   KC_NO,   KC_NO,  KC_NO,    KC_PERC,   KC_PLUS, KC_7, KC_8, KC_9, KC_MINS,
+			OS_SHFT, OS_CTRL, OS_ALT, OS_CMD,   KC_EQL,    KC_DOT,  KC_4, KC_5, KC_6, KC_COLN,
 			KC_NO,   KC_NO,   KC_NO,  KC_NO,    KC_UNDS,   KC_ASTR, KC_1, KC_2, KC_3, KC_SLSH,
-			                        KC_TRNS,    KC_TRNS,   KC_TRNS, FUN
+			                        KC_TRNS,    KC_TRNS,   KC_0, FUN
 								),
 
 	[_SYM] = LAYOUT_split_3x5_2(

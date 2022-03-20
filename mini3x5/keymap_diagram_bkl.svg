@@ -82,13 +82,19 @@
 
     .kc_up, .kc_down, .kc_left, .kc_right,
     .kc_ent, .kc_bspc, .os_caps, .kc_esc,
+    .kc_lsft, .nav_spc,
+    .kc_exlm, .kc_at, .kc_hash, .kc_dlr, .kc_perc,
+    .kc_ampr, .kc_astr, .kc_unds, .kc_mins,
+    .kc_pipe, .kc_scln, .kc_eql, .kc_coln, .kc_tild,
+    .kc_lt, .kc_gt, .kc_grv, .kc_circ, .kc_plus, .kc_bsls,
+    .kc_quot, .kc_dot, .kc_comm, .kc_slsh,
     .os_shft, .os_ctrl, .os_alt, .os_cmd,
-    .kc_mac_spotlight, .kc_pgup, .kc_pgdown,
+    .kc_mac_spotlight, .kc_pgup, .kc_pgdn,
     .kc_mac_undo, .kc_mac_redo, .kc_tab,
     .kc_mac_cut, .kc_spc, .kc_mac_lock_scrn,
     .kc_brightness_up, .kc_brightness_down,
-    .kc_audio_vol_up, .kc_audio_vol_down, .kc_audio_mute,
-    .kc_media_play_pause, .kc_media_prev_track, .kc_media_next_track {
+    .kc_volu, .kc_vold, .kc_mute,
+    .kc_mply, .kc_mprv, .kc_mnxt {
     	font-size: 18px;
     }
 
@@ -181,7 +187,7 @@
 </foreignObject>
 
 <foreignObject x="83" y="14" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_H" class="kc_h"><div class="glyph">H</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_Y" class="kc_y"><div class="glyph">Y</div></div>
 </foreignObject>
 
 <foreignObject x="152" y="14" width="65" height="55" class="text-container">
@@ -205,11 +211,11 @@
 </foreignObject>
 
 <foreignObject x="533" y="14" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_R" class="kc_r"><div class="glyph">R</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_M" class="kc_m"><div class="glyph">M</div></div>
 </foreignObject>
 
 <foreignObject x="602" y="14" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_F" class="kc_f"><div class="glyph">F</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_R" class="kc_r"><div class="glyph">R</div></div>
 </foreignObject>
 
 <foreignObject x="671" y="14" width="65" height="55" class="text-container">
@@ -217,7 +223,7 @@
 </foreignObject>
 
 <foreignObject x="14" y="73" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_Y" class="kc_y"><div class="glyph">Y</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_H" class="kc_h"><div class="glyph">H</div></div>
 </foreignObject>
 
 <foreignObject x="83" y="73" width="65" height="55" class="text-container">
@@ -281,7 +287,7 @@
 </foreignObject>
 
 <foreignObject x="464" y="132" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_M" class="kc_m"><div class="glyph">M</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_F" class="kc_f"><div class="glyph">F</div></div>
 </foreignObject>
 
 <foreignObject x="533" y="132" width="65" height="55" class="text-container">
