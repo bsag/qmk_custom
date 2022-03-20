@@ -316,7 +316,7 @@ for led_row_match in led_row_matches:
 
 # Create substitution mappings
 layer_names = {
-  "_BKL": "Base - BEAKL15",
+  "_BKL": "Base - BEAKL27",
   "_DEF": "QWERTY",
   "_NUM": "Numbers",
   "_SYM": "Symbols",
