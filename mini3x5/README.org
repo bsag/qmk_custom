@@ -1,4 +1,6 @@
-#title: My Ferris Sweep QMK layout
+#+title: My Ferris Sweep QMK layout
+#+author: bsag
+#+email: butshesagirl@rousette.org.uk
 
 This is my custom layout for my 3x5+2 [[https://www.rousette.org.uk/archives/ferris-sweep-keyboard-and-layout/][Ferris Sweep keyboard]]. I am using [[https://ieants.cc/beakl/][BEAKL]] as my full time layout at the moment. I started with the 15 version, but have switched to the 27 version to avoid some of the single finger bigram (SFB) issues, and I have also swapped Y and H for the same reason. I'm still building my speed back up again, but it does feel even more comfortable. On the Ferris, pressing the homerow pinkie keys is actually quite comfortable, so I'm fine having a common key like H on that key.
 
