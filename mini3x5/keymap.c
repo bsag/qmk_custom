@@ -106,7 +106,7 @@ const uint16_t PROGMEM del_combo_b[] = {KC_S, KC_N, COMBO_END};
 const uint16_t PROGMEM lcbr_combo_b[] = {KC_O, KC_E, COMBO_END};
 const uint16_t PROGMEM lprn_combo_b[] = {KC_U, KC_A, COMBO_END};
 const uint16_t PROGMEM lbrc_combo_b[] = {KC_X, KC_DOT, COMBO_END};
-const uint16_t PROGMEM rcbr_combo_b[] = {KC_R, KC_T, COMBO_END};
+const uint16_t PROGMEM rcbr_combo_b[] = {KC_M, KC_T, COMBO_END};
 const uint16_t PROGMEM rprn_combo_b[] = {KC_C, KC_S, COMBO_END};
 const uint16_t PROGMEM rbrc_combo_b[] = {KC_G, KC_D, COMBO_END};
 // Ctrl-c combo mostly for Emacs
