@@ -3,7 +3,28 @@
 #include QMK_KEYBOARD_H
 
 #include "quantum.h"
-#include "oneshot.h"
+
+// home row mods for BEAKL
+#define HOME_H LSFT_T(KC_H)
+#define HOME_I LCTL_T(KC_I)
+#define HOME_E LALT_T(KC_E)
+#define HOME_A LGUI_T(KC_A)
+
+#define HOME_S RGUI_T(KC_S)
+#define HOME_T LALT_T(KC_T)
+#define HOME_N RCTL_T(KC_N)
+#define HOME_B RSFT_T(KC_B)
+
+// home row mods for QWERTY
+#define QHOME_A LSFT_T(KC_A)
+#define QHOME_S LCTL_T(KC_S)
+#define QHOME_D LALT_T(KC_D)
+#define QHOME_F LGUI_T(KC_F)
+
+#define QHOME_J RGUI_T(KC_J)
+#define QHOME_K LALT_T(KC_K)
+#define QHOME_L RCTL_T(KC_L)
+#define QHOME_QUOT RSFT_T(KC_QUOT)
 
 // Layer keys
 #define NUM OSL(_NUM)
@@ -51,15 +72,7 @@ enum layers {
 };
 
 enum keycodes {
-	// Custom oneshot mod implementation with no timers.
-	OS_SHFT = SAFE_RANGE,
-	OS_CTRL,
-	OS_ALT,
-	OS_CMD,
-
-	NUMWORD,
-
-	CLEAR,
-
+	// Numword and switch app
+	NUMWORD = SAFE_RANGE,
 	SW_APP,
 };

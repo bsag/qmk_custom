@@ -6,5 +6,4 @@ COMBO_ENABLE 		= yes
 COMMAND_ENABLE      = no
 AUTO_SHIFT_ENABLE   = no
 SRC += caps_word.c
-SRC += oneshot.c
 SRC += swapper.c
