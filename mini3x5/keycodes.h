@@ -27,8 +27,8 @@
 #define QHOME_QUOT RSFT_T(KC_QUOT)
 
 // Layer keys
-#define NUM OSL(_NUM)
-#define SYM OSL(_SYM)
+#define NUM LT(_NUM, KC_ESC)
+#define SYM LT(_SYM, KC_ENT)
 #define WNAV MO(_WNAV) // Workspace navigation and media
 #define FUN MO(_FUN) // Fkeys and mods only
 #define NAV_SPC LT(_NAV, KC_SPC)

@@ -11,14 +11,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 			KC_Q,   KC_Y,    KC_O,    KC_U,   KC_X,        KC_G, KC_C,   KC_M,   KC_R,   KC_Z,
       HOME_H, HOME_I,  HOME_E,  HOME_A, KC_DOT,      KC_D, HOME_S, HOME_T, HOME_N, HOME_B,
 			KC_J,  KC_SLSH,  KC_COMM, KC_K,   KC_QUOT,     KC_W, KC_F,   KC_L,   KC_P,   KC_V,
-					                     NUM,   NAV_SPC,       KC_LSFT, SYM
+					                     NUM,   NAV_SPC,       KC_BSPC, SYM
 							   ),
 
 	[_DEF] = LAYOUT_split_3x5_2(
 			KC_Q, KC_W, KC_E, KC_R, KC_T,                KC_Y, KC_U, KC_I,    KC_O,   KC_P,
 			QHOME_A, QHOME_S, QHOME_D, QHOME_F, KC_G,    KC_H, QHOME_J, QHOME_K, QHOME_L, QHOME_QUOT,
 			KC_Z, KC_X, KC_C, KC_V, KC_B,                KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH,
-					           NUM, NAV_SPC,                KC_LSFT, SYM
+					           NUM, NAV_SPC,                 KC_BSPC, SYM
 							   ),
 
 	[_NUM] = LAYOUT_split_3x5_2(
@@ -60,21 +60,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 enum combo_events {
   // qwerty layer combos
-  CAPS_COMBO_Q,
-  ENTER_COMBO_Q,
   TAB_COMBO_Q,
-  BSP_COMBO_Q,
   DEL_COMBO_Q,
-  CTRLC_COMBO_Q,
-  ESC_COMBO_Q,
   // beakl layer combos
-  CAPS_COMBO_B,
-  ENTER_COMBO_B,
   TAB_COMBO_B,
-  BSP_COMBO_B,
   DEL_COMBO_B,
-  CTRLC_COMBO_B,
-  ESC_COMBO_B,
   // braces
   LCBR_COMBO_B,
   LPRN_COMBO_B,
@@ -87,20 +77,11 @@ enum combo_events {
 };
 uint16_t COMBO_LEN = COMBO_LENGTH;
 // qwerty combos
-const uint16_t PROGMEM caps_combo_q[] = {KC_F, KC_J, COMBO_END};
-const uint16_t PROGMEM enter_combo_q[] = {KC_J, KC_K, COMBO_END};
-const uint16_t PROGMEM tab_combo_q[] = {KC_F, KC_D, COMBO_END};
-const uint16_t PROGMEM bsp_combo_q[] = {KC_F, KC_S, COMBO_END};
-const uint16_t PROGMEM del_combo_q[] = {KC_J, KC_L, COMBO_END};
-// Ctrl-c combo mostly for Emacs
-const uint16_t PROGMEM ctrlc_combo_q[] = {KC_J, KC_K, KC_L, COMBO_END};
-const uint16_t PROGMEM esc_combo_q[] = {KC_F, KC_D, KC_S, COMBO_END};
+const uint16_t PROGMEM tab_combo_q[] = {KC_C, KC_V, COMBO_END};
+const uint16_t PROGMEM del_combo_q[] = {KC_M, KC_COMM, COMBO_END};
 // beakl combos
-const uint16_t PROGMEM caps_combo_b[] = {HOME_A, HOME_S, COMBO_END};
-const uint16_t PROGMEM enter_combo_b[] = {HOME_S, HOME_T, COMBO_END};
-const uint16_t PROGMEM tab_combo_b[] = {HOME_E, HOME_A, COMBO_END};
-const uint16_t PROGMEM bsp_combo_b[] = {HOME_I, HOME_A, COMBO_END};
-const uint16_t PROGMEM del_combo_b[] = {HOME_S, HOME_N, COMBO_END};
+const uint16_t PROGMEM tab_combo_b[] = {KC_COMM, KC_K, COMBO_END};
+const uint16_t PROGMEM del_combo_b[] = {KC_F, KC_L, COMBO_END};
 // braces - vertical combos
 const uint16_t PROGMEM lcbr_combo_b[] = {KC_O, HOME_E, COMBO_END};
 const uint16_t PROGMEM lprn_combo_b[] = {KC_U, HOME_A, COMBO_END};
@@ -108,26 +89,12 @@ const uint16_t PROGMEM lbrc_combo_b[] = {KC_X, KC_DOT, COMBO_END};
 const uint16_t PROGMEM rcbr_combo_b[] = {KC_M, HOME_T, COMBO_END};
 const uint16_t PROGMEM rprn_combo_b[] = {KC_C, HOME_S, COMBO_END};
 const uint16_t PROGMEM rbrc_combo_b[] = {KC_G, KC_D, COMBO_END};
-// Ctrl-c combo mostly for Emacs
-const uint16_t PROGMEM ctrlc_combo_b[] = {HOME_S, HOME_T, HOME_N, COMBO_END};
-const uint16_t PROGMEM esc_combo_b[] = {HOME_I, HOME_E, HOME_A, COMBO_END};
 
 combo_t key_combos[] = {
-  [CAPS_COMBO_Q] = COMBO_ACTION(caps_combo_q),
-  [ENTER_COMBO_Q] = COMBO(enter_combo_q, KC_ENT),
   [TAB_COMBO_Q] = COMBO(tab_combo_q, KC_TAB),
-  [BSP_COMBO_Q] = COMBO(bsp_combo_q, KC_BSPC),
   [DEL_COMBO_Q] = COMBO(del_combo_q, KC_DEL),
-  [CTRLC_COMBO_Q] = COMBO(ctrlc_combo_q, LCTL(KC_C)),
-  [ESC_COMBO_Q] = COMBO(esc_combo_q, KC_ESC),
-  // Other combos...
-  [CAPS_COMBO_B] = COMBO_ACTION(caps_combo_b),
-  [ENTER_COMBO_B] = COMBO(enter_combo_b, KC_ENT),
   [TAB_COMBO_B] = COMBO(tab_combo_b, KC_TAB),
-  [BSP_COMBO_B] = COMBO(bsp_combo_b, KC_BSPC),
   [DEL_COMBO_B] = COMBO(del_combo_b, KC_DEL),
-  [CTRLC_COMBO_B] = COMBO(ctrlc_combo_b, LCTL(KC_C)),
-  [ESC_COMBO_B] = COMBO(esc_combo_b, KC_ESC),
   [LCBR_COMBO_B] = COMBO(lcbr_combo_b, KC_LCBR),
   [LPRN_COMBO_B] = COMBO(lprn_combo_b, KC_LPRN),
   [LBRC_COMBO_B] = COMBO(lbrc_combo_b, KC_LBRC),
@@ -136,31 +103,17 @@ combo_t key_combos[] = {
   [RBRC_COMBO_B] = COMBO(rbrc_combo_b, KC_RBRC),
 };
 
-void process_combo_event(uint16_t combo_index, bool pressed) {
-  switch(combo_index) {
-    case CAPS_COMBO_Q:
-    case CAPS_COMBO_B:
-      if (pressed) {
-        caps_word_set(true);  // Activate Caps Word!
-      }
-      break;
-
-    // Other combos...
-  }
-}
-
-
 bool sw_app_active = false;
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
-	if (!process_caps_word(keycode, record)) { return false; }
+  if (!process_caps_word(keycode, record)) { return false; }
 
-	update_swapper(
-				   &sw_app_active, KC_LGUI, KC_TAB, SW_APP,
-				   keycode, record
-				   );
+  update_swapper(
+                 &sw_app_active, KC_LGUI, KC_TAB, SW_APP,
+                 keycode, record
+                 );
 
-	return true;
+  return true;
 }
 
 /* layer_state_t layer_state_set_user(layer_state_t state) { */
