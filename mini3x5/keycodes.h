@@ -26,12 +26,26 @@
 #define QHOME_L RCTL_T(KC_L)
 #define QHOME_QUOT RSFT_T(KC_QUOT)
 
+// home row mods for Platinum Hands Down
+#define HHOME_R LSFT_T(KC_R)
+#define HHOME_S LCTL_T(KC_S)
+#define HHOME_N LALT_T(KC_N)
+#define HHOME_T LGUI_T(KC_T)
+
+#define HHOME_A RGUI_T(KC_A)
+#define HHOME_E LALT_T(KC_E)
+#define HHOME_C RCTL_T(KC_C)
+#define HHOME_I RSFT_T(KC_I)
+
 // Layer keys
 #define NUM LT(_NUM, KC_ESC)
 #define SYM LT(_SYM, KC_ENT)
 #define WNAV MO(_WNAV) // Workspace navigation and media
 #define FUN MO(_FUN) // Fkeys and mods only
 #define NAV_SPC LT(_NAV, KC_SPC)
+
+// Hands Down only
+#define NAV_L LT(_NAV, KC_L)
 
 // shortcuts
 #define M_UNDO G(KC_Z)
@@ -57,6 +71,8 @@
 #define W6 HYPR(KC_6)
 // to qwerty layer
 #define TG_QWTY TG(_DEF)
+// to hands down layer
+#define TG_PHD TG(_PHD)
 // awkward symbols to type
 #define GBPD LALT(KC_3) // UK pound sign
 #define PMIN LALT(KC_PLUS) // plus/minus symbol
@@ -64,6 +80,7 @@
 enum layers {
 	_BKL,
 	_DEF,
+	_PHD,
 	_NUM,
 	_SYM,
 	_NAV,
