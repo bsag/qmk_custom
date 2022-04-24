@@ -4,16 +4,16 @@
 
 #include "quantum.h"
 
-// home row mods for BEAKL
-#define HOME_H LSFT_T(KC_H)
-#define HOME_I LCTL_T(KC_I)
-#define HOME_E LALT_T(KC_E)
-#define HOME_A LGUI_T(KC_A)
+// home row mods for Platinum Hands Down
+#define HHOME_R LSFT_T(KC_R)
+#define HHOME_S LCTL_T(KC_S)
+#define HHOME_N LALT_T(KC_N)
+#define HHOME_T LGUI_T(KC_T)
 
-#define HOME_S RGUI_T(KC_S)
-#define HOME_T LALT_T(KC_T)
-#define HOME_N RCTL_T(KC_N)
-#define HOME_B RSFT_T(KC_B)
+#define HHOME_A RGUI_T(KC_A)
+#define HHOME_E LALT_T(KC_E)
+#define HHOME_C RCTL_T(KC_C)
+#define HHOME_I RSFT_T(KC_I)
 
 // home row mods for QWERTY
 #define QHOME_A LSFT_T(KC_A)
@@ -25,17 +25,6 @@
 #define QHOME_K LALT_T(KC_K)
 #define QHOME_L RCTL_T(KC_L)
 #define QHOME_QUOT RSFT_T(KC_QUOT)
-
-// home row mods for Platinum Hands Down
-#define HHOME_R LSFT_T(KC_R)
-#define HHOME_S LCTL_T(KC_S)
-#define HHOME_N LALT_T(KC_N)
-#define HHOME_T LGUI_T(KC_T)
-
-#define HHOME_A RGUI_T(KC_A)
-#define HHOME_E LALT_T(KC_E)
-#define HHOME_C RCTL_T(KC_C)
-#define HHOME_I RSFT_T(KC_I)
 
 // Layer keys
 #define NUM LT(_NUM, KC_ESC)
@@ -78,9 +67,8 @@
 #define PMIN LALT(KC_PLUS) // plus/minus symbol
 
 enum layers {
-	_BKL,
-	_DEF,
 	_PHD,
+	_DEF,
 	_NUM,
 	_SYM,
 	_NAV,

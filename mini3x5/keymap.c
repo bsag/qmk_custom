@@ -7,25 +7,19 @@
 #include "keycodes.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [_BKL] = LAYOUT_split_3x5_2(
-                              KC_Q,   KC_Y,    KC_O,    KC_U,   KC_X,        KC_G, KC_C,   KC_M,   KC_R,   KC_Z,
-                              HOME_H, HOME_I,  HOME_E,  HOME_A, KC_DOT,      KC_D, HOME_S, HOME_T, HOME_N, HOME_B,
-                              KC_J,  KC_SLSH,  KC_COMM, KC_K,   KC_QUOT,     KC_W, KC_F,   KC_L,   KC_P,   KC_V,
-                              NUM,   NAV_SPC,       KC_BSPC, SYM
+  // PHD = Platinum Hands Down layout
+   [_PHD] = LAYOUT_split_3x5_2(
+                              KC_J,    KC_G,    KC_H,    KC_P,    KC_V,      KC_MINS, KC_DOT,  KC_COMM, KC_QUOT, KC_DQUO,
+                              HHOME_R, HHOME_S, HHOME_N, HHOME_T, KC_B,      KC_SLSH, HHOME_A, HHOME_E, HHOME_C, HHOME_I,
+                              KC_X,    KC_F,    KC_M,    KC_D,    KC_K,      KC_BSPC, KC_U,    KC_O,    KC_W,    KC_Y,
+                                                         NUM,   NAV_L,       KC_SPC, SYM
                               ),
-
+  // QWERTY layout
   [_DEF] = LAYOUT_split_3x5_2(
                               KC_Q, KC_W, KC_E, KC_R, KC_T,                KC_Y, KC_U, KC_I,    KC_O,   KC_P,
                               QHOME_A, QHOME_S, QHOME_D, QHOME_F, KC_G,    KC_H, QHOME_J, QHOME_K, QHOME_L, QHOME_QUOT,
                               KC_Z, KC_X, KC_C, KC_V, KC_B,                KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH,
                               NUM, NAV_SPC,                 KC_BSPC, SYM
-                              ),
-
-   [_PHD] = LAYOUT_split_3x5_2(
-                              KC_J,    KC_G,    KC_H,    KC_P,    KC_V,      KC_Q,    KC_DOT,  KC_SLSH, KC_QUOT, KC_Z,
-                              HHOME_R, HHOME_S, HHOME_N, HHOME_T, KC_B,      KC_COMM, HHOME_A, HHOME_E, HHOME_C, HHOME_I,
-                              KC_X,    KC_F,    KC_M,    KC_D,    KC_K,      KC_MINS, KC_U,    KC_O,    KC_W,    KC_Y,
-                                                         NUM,   NAV_L,       KC_SPC, SYM
                               ),
 
   [_NUM] = LAYOUT_split_3x5_2(
@@ -69,19 +63,10 @@ enum combo_events {
   // qwerty layer combos
   TAB_COMBO_Q,
   DEL_COMBO_Q,
-  // beakl layer combos
-  TAB_COMBO_B,
-  DEL_COMBO_B,
-  // braces
-  LCBR_COMBO_B,
-  LPRN_COMBO_B,
-  LBRC_COMBO_B,
-  RCBR_COMBO_B,
-  RPRN_COMBO_B,
-  RBRC_COMBO_B,
   // hands down combos
   TAB_COMBO_P,
-  DEL_COMBO_P,
+  Q_COMBO_P,
+  Z_COMBO_P,
   // braces
   LCBR_COMBO_P,
   LPRN_COMBO_P,
@@ -96,40 +81,24 @@ uint16_t COMBO_LEN = COMBO_LENGTH;
 // qwerty combos
 const uint16_t PROGMEM tab_combo_q[] = {KC_C, KC_V, COMBO_END};
 const uint16_t PROGMEM del_combo_q[] = {KC_M, KC_COMM, COMBO_END};
-// beakl combos
-const uint16_t PROGMEM tab_combo_b[] = {KC_COMM, KC_K, COMBO_END};
-const uint16_t PROGMEM del_combo_b[] = {KC_F, KC_L, COMBO_END};
-// braces - vertical combos
-const uint16_t PROGMEM lcbr_combo_b[] = {KC_O, HOME_E, COMBO_END};
-const uint16_t PROGMEM lprn_combo_b[] = {KC_U, HOME_A, COMBO_END};
-const uint16_t PROGMEM lbrc_combo_b[] = {KC_X, KC_DOT, COMBO_END};
-const uint16_t PROGMEM rcbr_combo_b[] = {KC_M, HOME_T, COMBO_END};
-const uint16_t PROGMEM rprn_combo_b[] = {KC_C, HOME_S, COMBO_END};
-const uint16_t PROGMEM rbrc_combo_b[] = {KC_G, KC_D, COMBO_END};
 // hands down combos
 const uint16_t PROGMEM tab_combo_p[] = {KC_M, KC_D, COMBO_END};
-const uint16_t PROGMEM del_combo_p[] = {KC_U, KC_O, COMBO_END};
+const uint16_t PROGMEM q_combo_p[] = {KC_U, KC_O, COMBO_END};
+const uint16_t PROGMEM z_combo_p[] = {KC_W, KC_Y, COMBO_END};
 // braces - vertical combos
 const uint16_t PROGMEM lcbr_combo_p[] = {KC_H, HHOME_N, COMBO_END};
 const uint16_t PROGMEM lprn_combo_p[] = {KC_P, HHOME_T, COMBO_END};
 const uint16_t PROGMEM lbrc_combo_p[] = {KC_V, KC_B, COMBO_END};
-const uint16_t PROGMEM rcbr_combo_p[] = {KC_Q, KC_COMM, COMBO_END};
+const uint16_t PROGMEM rbrc_combo_p[] = {KC_MINS, KC_SLSH, COMBO_END};
 const uint16_t PROGMEM rprn_combo_p[] = {KC_DOT, HHOME_A, COMBO_END};
-const uint16_t PROGMEM rbrc_combo_p[] = {KC_SLSH, KC_E, COMBO_END};
+const uint16_t PROGMEM rcbr_combo_p[] = {KC_COMM, HHOME_E, COMBO_END};
 
 combo_t key_combos[] = {
   [TAB_COMBO_Q] = COMBO(tab_combo_q, KC_TAB),
   [DEL_COMBO_Q] = COMBO(del_combo_q, KC_DEL),
-  [TAB_COMBO_B] = COMBO(tab_combo_b, KC_TAB),
-  [DEL_COMBO_B] = COMBO(del_combo_b, KC_DEL),
   [TAB_COMBO_P] = COMBO(tab_combo_p, KC_TAB),
-  [DEL_COMBO_P] = COMBO(del_combo_p, KC_DEL),
-  [LCBR_COMBO_B] = COMBO(lcbr_combo_b, KC_LCBR),
-  [LPRN_COMBO_B] = COMBO(lprn_combo_b, KC_LPRN),
-  [LBRC_COMBO_B] = COMBO(lbrc_combo_b, KC_LBRC),
-  [RCBR_COMBO_B] = COMBO(rcbr_combo_b, KC_RCBR),
-  [RPRN_COMBO_B] = COMBO(rprn_combo_b, KC_RPRN),
-  [RBRC_COMBO_B] = COMBO(rbrc_combo_b, KC_RBRC),
+  [Q_COMBO_P] = COMBO(q_combo_p, KC_Q),
+  [Z_COMBO_P] = COMBO(z_combo_p, KC_Z),
   [LCBR_COMBO_P] = COMBO(lcbr_combo_p, KC_LCBR),
   [LPRN_COMBO_P] = COMBO(lprn_combo_p, KC_LPRN),
   [LBRC_COMBO_P] = COMBO(lbrc_combo_p, KC_LBRC),
