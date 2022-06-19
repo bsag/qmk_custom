@@ -5,15 +5,15 @@
 #include "quantum.h"
 
 // home row mods for Platinum Hands Down
-#define HHOME_R LSFT_T(KC_R)
-#define HHOME_S LCTL_T(KC_S)
-#define HHOME_N LALT_T(KC_N)
-#define HHOME_T LGUI_T(KC_T)
+#define HHOME_R LCTL_T(KC_R)
+#define HHOME_S LALT_T(KC_S)
+#define HHOME_N LGUI_T(KC_N)
+#define HHOME_T LSFT_T(KC_T)
 
-#define HHOME_A RGUI_T(KC_A)
-#define HHOME_E LALT_T(KC_E)
-#define HHOME_C RCTL_T(KC_C)
-#define HHOME_I RSFT_T(KC_I)
+#define HHOME_A RSFT_T(KC_A)
+#define HHOME_E RGUI_T(KC_E)
+#define HHOME_C LALT_T(KC_C)
+#define HHOME_I RCTL_T(KC_I)
 
 // home row mods for QWERTY
 #define QHOME_A LSFT_T(KC_A)
