@@ -23,7 +23,7 @@
 
 #define QHOME_N RSFT_T(KC_N)
 #define QHOME_E LGUI_T(KC_E)
-#define QHOME_I RALT_T(KC_I)
+#define QHOME_I LALT_T(KC_I)
 #define QHOME_O RCTL_T(KC_O)
 
 // Layer keys
@@ -46,6 +46,7 @@
 #define WS_L A(S(KC_LEFT))
 #define WS_R A(S(KC_RIGHT))
 #define LAU LGUI(KC_SPC)
+#define CC C(KC_C)
 // to colemak layer
 #define TG_CDH TG(_CDH)
 // to hands down layer
