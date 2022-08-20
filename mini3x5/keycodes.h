@@ -26,15 +26,13 @@
 #define M_COPY G(KC_C)
 #define M_PSTE G(KC_V)
 #define M_SAVE G(KC_S)
-#define M_DUP G(KC_D)
 #define TAB_L G(S(KC_LBRC))
 #define TAB_R G(S(KC_RBRC))
-#define WS_L A(S(KC_LEFT))
-#define WS_R A(S(KC_RIGHT))
-#define LAU LGUI(KC_SPC)
-#define CC C(KC_C)
-// to hands down layer
-#define TG_PHD TG(_PHD)
+#define WS_L A(S(KC_LEFT))  // select word left
+#define WS_R A(S(KC_RIGHT)) // select word right
+#define W_L A(KC_LEFT)      // move word left
+#define W_R A(KC_RIGHT)     // move word right
+#define LAU LGUI(KC_SPC)    // launcher (cmd+spc)
 // awkward symbols to type
 #define GBPD LALT(KC_3) // UK pound sign
 #define PMIN LALT(KC_PLUS) // plus/minus symbol
@@ -49,5 +47,6 @@ enum layers {
 enum keycodes {
 	// Numword and switch app
 	NUMWORD = SAFE_RANGE,
+	LLOCK,
 	SW_APP,
 };
