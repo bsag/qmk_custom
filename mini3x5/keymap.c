@@ -1,6 +1,6 @@
 #include QMK_KEYBOARD_H
 
-// Callum oneshot mods and swapper
+// Callum swapper
 // https://github.com/callum-oakley/qmk_firmware/blob/master/users/callum
 #include "caps_word.h"
 #include "swapper.h"

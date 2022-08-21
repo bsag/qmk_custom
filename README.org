@@ -23,16 +23,20 @@ This is a keymap for a 34 key [[https://github.com/davidphilipbarr/Sweep][Ferris
 v2.1]] which is a super-compact 3x5+2 Kailh Choc keyboard. I've taken inspiration
 from a lot of other users' keymaps:
 
-- One-shot mods and single key app switching from [[https://github.com/callum-oakley/qmk_firmware/tree/master/users/callum][callum]]
 - [[https://github.com/treeman/qmk_firmware/tree/master/keyboards/splitkb/kyria/keymaps/treeman][Layer arrangement]] and 'numword' setup from [[https://www.jonashietala.se/blog/2021/06/03/the-t-34-keyboard-layout/#base-layer][Jonas Hietala]]
-- 'capsword' setup from [[https://getreuer.info/posts/keyboards/caps-word/index.html][Pascal Getreuer]]
+- 'capsword' setup from [[https://getreuer.info/posts/keyboards/caps-word/index.html][Pascal
+  Getreuer]]
+- 'layer lock' also from [[https://getreuer.info/posts/keyboards/layer-lock/index.html][Pascal Getreuer]]
 
 ...and probably many others that I've forgotten about.
 
-The layout uses combos on the baselayer to replace keys like enter and escape
-that do not fit on a small keyboard, one-shot mods/layers and a combo to
-activate a 'numword' layer which automatically de-activates when a non-numerical
-character is typed.
+The layout uses combos on the base layer for easy access to punctuation on the
+base layer that I don't have space for otherwise (all the types of braces, dash,
+underscore, semi-colon and colon). I have tried a couple of non-qwerty base
+layouts, but I currently use [[https://colemakmods.github.io/mod-dh/][Colemak Mod-DH]].
+
+You can see the most recent layout [[http://www.keyboard-layout-editor.com/#/gists/fcb843070487acedcd6a3ca1cc022482][on Keyboard Layout Editor]], though I haven't
+found a good way to represent combos, so you will have to look at =keymap.c= for those.
 
 * mini3x6
 This keymap is for a 42 key Corne keyboard, but only maps the 34 keys shared
