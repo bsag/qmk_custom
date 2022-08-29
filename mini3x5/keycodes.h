@@ -5,15 +5,15 @@
 #include "quantum.h"
 
 // home row mods for Colemak-DH
-#define HOME_A LCTL_T(KC_A)
-#define HOME_R LALT_T(KC_R)
-#define HOME_S LGUI_T(KC_S)
-#define HOME_T LSFT_T(KC_T)
+/* #define HOME_A LCTL_T(KC_A) */
+/* #define HOME_R LALT_T(KC_R) */
+/* #define HOME_S LGUI_T(KC_S) */
+/* #define HOME_T LSFT_T(KC_T) */
 
-#define HOME_N RSFT_T(KC_N)
-#define HOME_E LGUI_T(KC_E)
-#define HOME_I LALT_T(KC_I)
-#define HOME_O RCTL_T(KC_O)
+/* #define HOME_N RSFT_T(KC_N) */
+/* #define HOME_E LGUI_T(KC_E) */
+/* #define HOME_I LALT_T(KC_I) */
+/* #define HOME_O RCTL_T(KC_O) */
 
 // Layer keys
 #define NUM LT(_NUM, KC_ENT)
@@ -47,6 +47,12 @@ enum layers {
 enum keycodes {
 	// Numword and switch app
 	NUMWORD = SAFE_RANGE,
+
+	OS_SHFT,
+    OS_CTRL,
+    OS_ALT,
+    OS_CMD,
+
 	LLOCK,
 	SW_APP,
 };
