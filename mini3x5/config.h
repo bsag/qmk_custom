@@ -33,3 +33,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   #define RGBLIGHT_SAT_STEP 8
   #define RGBLIGHT_VAL_STEP 8
 #endif
+
+#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD

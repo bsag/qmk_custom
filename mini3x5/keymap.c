@@ -2,7 +2,6 @@
 
 // Callum swapper
 // https://github.com/callum-oakley/qmk_firmware/blob/master/users/callum
-#include "caps_word.h"
 #include "oneshot.h"
 #include "swapper.h"
 #include "keycodes.h"
@@ -14,7 +13,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                               KC_Q, KC_W, KC_F, KC_P, KC_B,                KC_J, KC_L, KC_U,    KC_Y,   KC_QUOT,
                               KC_A, KC_R, KC_S, KC_T, KC_G,                KC_M, KC_N, KC_E,    KC_I,   KC_O,
                               KC_Z, KC_X, KC_C, KC_D, KC_V,                KC_K, KC_H, KC_COMM, KC_DOT, KC_SLSH,
-                                                 NAV, OS_SHFT,             KC_SPC, NUM
+                                                 NAV, OSM(MOD_LSFT),       KC_SPC, NUM
                               ),
 
 
@@ -80,6 +79,27 @@ enum combo_events {
    [RBRC_COMBO] = COMBO(rbrc_combo, KC_RBRC),
  };
 
+// caps word setup
+bool caps_word_press_user(uint16_t keycode) {
+    switch (keycode) {
+        // Keycodes that continue Caps Word, with shift applied.
+        case KC_A ... KC_Z:
+            add_weak_mods(MOD_BIT(KC_LSFT));  // Apply shift to next key.
+            return true;
+
+        // Keycodes that continue Caps Word, without shifting.
+        case KC_1 ... KC_0:
+        case KC_BSPC:
+        case KC_MINS:
+        case KC_DEL:
+        case KC_UNDS:
+            return true;
+
+        default:
+            return false;  // Deactivate Caps Word.
+    }
+}
+
 bool is_oneshot_cancel_key(uint16_t keycode) {
     switch (keycode) {
     case NAV:
@@ -113,7 +133,6 @@ oneshot_state os_alt_state = os_up_unqueued;
 oneshot_state os_cmd_state = os_up_unqueued;
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
-  if (!process_caps_word(keycode, record)) { return false; }
 
   update_swapper(
                  &sw_app_active, KC_LGUI, KC_TAB, SW_APP,
