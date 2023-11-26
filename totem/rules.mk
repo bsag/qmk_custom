@@ -7,6 +7,9 @@ BOOTLOADER = rp2040
 # Ignore some warnings during the build, likely to be fixed before RP2040 PR is merged
 ALLOW_WARNINGS = yes
 
+# For bilateral combinations patch
+DEFERRED_EXEC_ENABLE = yes
+
 # LTO must be disabled for RP2040 builds
 LTO_ENABLE = no
 

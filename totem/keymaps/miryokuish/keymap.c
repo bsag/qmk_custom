@@ -98,11 +98,13 @@ const uint16_t PROGMEM esc_combo[] = {ALT_R, SHT_T, COMBO_END};
 const uint16_t PROGMEM lpar_combo[] = {GUI_S, SHT_T, COMBO_END};
 const uint16_t PROGMEM rpar_combo[] = {SHT_N, GUI_E, COMBO_END};
 const uint16_t PROGMEM slsh_combo[] = {GUI_E, MEH_COM, COMBO_END};
+const uint16_t PROGMEM bsls_combo[] = {GUI_S, MEH_C, COMBO_END};
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(esc_combo, KC_ESC),
     COMBO(lpar_combo, S(KC_9)),
     COMBO(rpar_combo, S(KC_0)),
-    COMBO(slsh_combo, KC_SLSH)
+    COMBO(slsh_combo, KC_SLSH),
+    COMBO(bsls_combo, KC_BSLS)
 };
 
 
@@ -275,71 +277,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // ▝▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▘
 
 
-// bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-//     switch (keycode) {
 
-//         case OS_SWAP: 
-//             if (record->event.pressed) {
-//                 if (!keymap_config.swap_lctl_lgui) {
-//                   keymap_config.swap_lctl_lgui = true;  // ─── MAC
-//                 }
-//                 else {
-//                   keymap_config.swap_lctl_lgui = false; // ─── WIN
-//                 }
-//             eeconfig_update_keymap(keymap_config.raw);
-//             clear_keyboard();  // ──── clear to prevent stuck keys    
-//             return false;
-//           }
-
-
-// ┌─────────────────────────────────────────────────┐
-// │ l a y e r                                       │
-// └─────────────────────────────────────────────────┘
-
-        // case COLEMAK:
-        //     if (record->event.pressed) {
-        //         set_single_persistent_default_layer(_COLEMAK);
-        //     }
-        //     return false;
-        // case QWERTY:
-        //     if (record->event.pressed) {
-        //         set_single_persistent_default_layer(_QWERTY);
-        //     }
-        //     return false;
-
-// ┌─────────────────────────────────────────────────┐
-// │ q m k                                           │
-// └─────────────────────────────────────────────────┘
-
-        // case MAKE_H:
-        //   if (record->event.pressed) {
-        //     SEND_STRING ("qmk compile -kb totem -km geist");
-        //     tap_code(KC_ENTER); 
-        //   } 
-        //   break;
-
-// ┌─────────────────────────────────────────────────┐
-// │ p r o d u c t i v i t y                         │
-// └─────────────────────────────────────────────────┘
-
-//       case GIPHY:
-//           if (record->event.pressed) {
-//             SEND_STRING ("@gif ");
-//           } 
-//           break;
-
-//       case SNAP:
-//           if (record->event.pressed) {
-//             if (keymap_config.swap_lctl_lgui) {
-//               SEND_STRING(SS_LSFT(SS_LCMD(SS_LCTL("4"))));  //MAC           
-//             } else {
-//               SEND_STRING(SS_LSFT(SS_LWIN("S")));           //WIN
-//             }
-//           }
-//           break;
-//     }
-//     return true;
-// }
 /*
   ╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸
 

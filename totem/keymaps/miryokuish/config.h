@@ -8,11 +8,18 @@ for more options.
 #define MASTER_LEFT
 // #define MASTER_RIGHT
 
+/* QMK */
+#define TAPPING_TERM 200
+#define IGNORE_MOD_TAP_INTERRUPT /* for rolling on mod-tap keys */
 
-// HRM configuration
-#define TAPPING_TERM 280
-#define QUICK_TAP_TERM 175
-#define PERMISSIVE_HOLD
+/* Miryoku, see https://sunaku.github.io/home-row-mods.html*/
+#define BILATERAL_COMBINATIONS_LIMIT_CHORD_TO_N_KEYS 4 /* GUI, Alt, Ctrl, Shift */
+#define BILATERAL_COMBINATIONS_DELAY_MODS_THAT_MATCH MOD_MASK_GUI
+#define BILATERAL_COMBINATIONS_DELAY_MATCHED_MODS_BY 120  /* ms */
+#define BILATERAL_COMBINATIONS_ALLOW_CROSSOVER_AFTER 80   /* ms */
+#define BILATERAL_COMBINATIONS_ALLOW_SAMESIDED_AFTER 3000 /* ms */
+#define BILATERAL_COMBINATIONS_TYPING_STREAK_TIMEOUT 160  /* ms */
+#define BILATERAL_COMBINATIONS_TYPING_STREAK_MODMASK (~MOD_MASK_SHIFT)
 
 #undef LOCKING_SUPPORT_ENABLE
 #undef LOCKING_RESYNC_ENABLE
@@ -23,4 +30,4 @@ for more options.
 //#define NO_ACTION_TAPPING
 //#define NO_MUSIC_MODE
 
-#define COMBO_COUNT 4
+#define COMBO_COUNT 5
