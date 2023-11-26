@@ -23,15 +23,27 @@ QMK_HOME="$MY_HOME/git/github/qmk_firmware"
 # Gets the full path to this keymaps repo's directory
 REPO_DIR="$(realpath "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )")"
 
-function symlink_hwcrkbd_custom_keymap() {
+function symlink_hwcrkbd_custom_keyboard() {
   local source_keymap="$REPO_DIR/hwcrkbd"
   local symlink_destination="$QMK_HOME/keyboards/hwcrkbd"
 
   if [ ! -d "$symlink_destination" ]; then
-    echo "Symlinking keymap"
+    echo "Symlinking keyboard"
     ln -s "$source_keymap" "$symlink_destination"
   else
-    echo "Keymap already in place, nothing to do"
+    echo "Keyboard already in place, nothing to do"
+  fi
+}
+
+function symlink_totem_custom_keyboard() {
+  local source_keymap="$REPO_DIR/totem"
+  local symlink_destination="$QMK_HOME/keyboards/totem"
+
+  if [ ! -d "$symlink_destination" ]; then
+    echo "Symlinking keyboard"
+    ln -s "$source_keymap" "$symlink_destination"
+  else
+    echo "Keyboard already in place, nothing to do"
   fi
 }
 
@@ -59,6 +71,10 @@ function symlink_mini3x5_custom_keymap() {
   fi
 }
 
-symlink_hwcrkbd_custom_keymap
+symlink_hwcrkbd_custom_keyboard
+symlink_totem_custom_keyboard
 symlink_mini3x6_custom_keymap
 symlink_mini3x5_custom_keymap
+
+# build firmware like so:
+# qmk compile -kb totem -km default
