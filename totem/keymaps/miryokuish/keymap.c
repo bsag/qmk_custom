@@ -94,17 +94,74 @@ enum custom_keycodes {
 // │ d e f i n e   c o m b o s                       │
 // └─────────────────────────────────────────────────┘
 
-const uint16_t PROGMEM esc_combo[] = {ALT_R, SHT_T, COMBO_END};
-const uint16_t PROGMEM lpar_combo[] = {GUI_S, SHT_T, COMBO_END};
-const uint16_t PROGMEM rpar_combo[] = {SHT_N, GUI_E, COMBO_END};
-const uint16_t PROGMEM slsh_combo[] = {GUI_E, MEH_COM, COMBO_END};
+// Left hand vertical combos
+// Between top and home row
+const uint16_t PROGMEM at_combo[] = {KC_W, ALT_R, COMBO_END};
+const uint16_t PROGMEM hash_combo[] = {KC_F, GUI_S, COMBO_END};
+const uint16_t PROGMEM dollar_combo[] = {KC_P, SHT_T, COMBO_END};
+const uint16_t PROGMEM perc_combo[] = {KC_B, KC_G, COMBO_END};
+
+// Between home and bottom row
+const uint16_t PROGMEM grave_combo[] = {ALT_R, KC_X, COMBO_END};
 const uint16_t PROGMEM bsls_combo[] = {GUI_S, MEH_C, COMBO_END};
+const uint16_t PROGMEM eql_combo[] = {SHT_T, HYP_D, COMBO_END};
+const uint16_t PROGMEM tilde_combo[] = {KC_G, KC_V, COMBO_END};
+
+// horizontal combos
+const uint16_t PROGMEM esc_combo[] = {ALT_R, SHT_T, COMBO_END};
+const uint16_t PROGMEM copy_combo[] = {KC_X, MEH_C, COMBO_END};
+const uint16_t PROGMEM paste_combo[] = {MEH_C, HYP_D, COMBO_END};
+const uint16_t PROGMEM cut_combo[] = {KC_X, HYP_D, COMBO_END};
+
+// Right hand vertical combos
+// Between top and home row
+const uint16_t PROGMEM caret_combo[] = {KC_J, KC_M, COMBO_END};
+const uint16_t PROGMEM plus_combo[] = {KC_L, SHT_N, COMBO_END};
+const uint16_t PROGMEM star_combo[] = {KC_U, GUI_E, COMBO_END};
+const uint16_t PROGMEM amp_combo[] = {KC_Y, ALT_I, COMBO_END};
+
+// Between home and bottow row
+const uint16_t PROGMEM unds_combo[] = {KC_M, KC_K, COMBO_END};
+const uint16_t PROGMEM mins_combo[] = {SHT_N, HYP_H, COMBO_END};
+const uint16_t PROGMEM slsh_combo[] = {GUI_E, MEH_COM, COMBO_END};
+const uint16_t PROGMEM pipe_combo[] = {ALT_I, KC_DOT, COMBO_END};
+
+// Horizontal combos: brackets
+const uint16_t PROGMEM lsqr_combo[] = {KC_L, KC_U, COMBO_END};
+const uint16_t PROGMEM rsqr_combo[] = {KC_U, KC_Y, COMBO_END};
+const uint16_t PROGMEM lpar_combo[] = {SHT_N, GUI_E, COMBO_END};
+const uint16_t PROGMEM rpar_combo[] = {GUI_E, ALT_I, COMBO_END};
+const uint16_t PROGMEM lcbr_combo[] = {HYP_H, MEH_COM, COMBO_END};
+const uint16_t PROGMEM rcbr_combo[] = {MEH_COM, KC_DOT, COMBO_END};
+
+
 combo_t key_combos[COMBO_COUNT] = {
-    COMBO(esc_combo, KC_ESC),
-    COMBO(lpar_combo, S(KC_9)),
-    COMBO(rpar_combo, S(KC_0)),
-    COMBO(slsh_combo, KC_SLSH),
-    COMBO(bsls_combo, KC_BSLS)
+  COMBO(at_combo, KC_AT),
+  COMBO(hash_combo, KC_HASH),
+  COMBO(dollar_combo, KC_DLR),
+  COMBO(perc_combo, KC_PERC),
+  COMBO(grave_combo, KC_GRV),
+  COMBO(bsls_combo, KC_BSLS),
+  COMBO(eql_combo, KC_EQL),
+  COMBO(tilde_combo, KC_TILD),
+  COMBO(esc_combo, KC_ESC),
+  COMBO(copy_combo, S_COPY),
+  COMBO(paste_combo, S_PASTE),
+  COMBO(cut_combo, S_CUT),
+  COMBO(caret_combo, KC_CIRC),
+  COMBO(plus_combo, KC_PLUS),
+  COMBO(star_combo, KC_ASTR),
+  COMBO(amp_combo, KC_AMPR),
+  COMBO(unds_combo, KC_UNDS),
+  COMBO(mins_combo, KC_MINS),
+  COMBO(slsh_combo, KC_SLSH),
+  COMBO(pipe_combo, KC_PIPE),
+  COMBO(lsqr_combo, KC_LBRC),
+  COMBO(rsqr_combo, KC_RBRC),
+  COMBO(lpar_combo, KC_LPRN),
+  COMBO(rpar_combo, KC_RPRN),
+  COMBO(lcbr_combo, KC_LCBR),
+  COMBO(rcbr_combo, KC_RCBR)
 };
 
 
@@ -112,15 +169,52 @@ combo_t key_combos[COMBO_COUNT] = {
 // │ d e f i n e   k e y   o v e r r i d e s         │
 // └─────────────────────────────────────────────────┘
 
-const key_override_t quexclam_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_QUES, KC_EXLM);
-const key_override_t comma_key_override = ko_make_basic(MOD_MASK_SHIFT, MEH_COM, KC_SCLN);
-const key_override_t dot_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, KC_COLN);
+// shift + ? = !
+const key_override_t quexclam_override = ko_make_basic(MOD_MASK_SHIFT, KC_QUES, KC_EXLM);
+
+// Override comma key: no mod = , | shift = ; | ctrl+shift = <
+const key_override_t semicolon_override = 
+  ko_make_with_layers_negmods_and_options(
+      MOD_MASK_SHIFT,       // Trigger modifiers: shift
+      MEH_COM,             // Trigger key: meh_comma hold tap key
+      KC_SCLN,             // Replacement key: ;
+      ~0,                  // Activate on all layers
+      MOD_MASK_CA,         // Do not activate when ctrl, alt or gui is pressed
+      ko_option_no_reregister_trigger);
+const key_override_t lt_override = 
+  ko_make_with_layers_negmods_and_options(
+    MOD_MASK_CS,      // Trigger modifiers: ctrl+shift
+    MEH_COM,         // Trigger key: meh_comma hold tap key
+    KC_LT,         // Replacemeng key: <
+    ~0,              // All layers
+    MOD_MASK_AG,     // Do not activate when alt or gui is pressed
+    ko_option_no_reregister_trigger); 
+
+// Override . key: no mod = . | shift = : | ctrl+shift = >
+const key_override_t colon_override = 
+  ko_make_with_layers_negmods_and_options(
+      MOD_MASK_SHIFT,      // Trigger modifiers: shift
+      KC_DOT,              // Trigger key: dot key
+      KC_COLN,             // Replacement key: :
+      ~0,                  // Activate on all layers
+      MOD_MASK_CA,        // Do not activate when ctrl or alt is pressed
+      ko_option_no_reregister_trigger);
+const key_override_t gt_override = 
+  ko_make_with_layers_negmods_and_options(
+    MOD_MASK_CS,           // Trigger modifiers: ctrl+shift
+    KC_DOT,                // Trigger key: dot key
+    KC_GT,                 // Replacemeng key: >
+    ~0,                    // All layers
+    MOD_MASK_AG,           // Do not activate when alt or gui is pressed
+    ko_option_no_reregister_trigger);
 
 // This globally defines all key overrides to be used ├───────────┐
 const key_override_t **key_overrides = (const key_override_t *[]){
-  &quexclam_key_override,
-  &comma_key_override,
-  &dot_key_override,
+  &quexclam_override,
+  &semicolon_override,
+  &lt_override,
+  &colon_override,
+  &gt_override,
   NULL // Null terminate the array of overrides!
 };
 
@@ -210,7 +304,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              ├─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┤
              │    :    │    $    │    %    │    ^    │   +     ││         │  SHFT   │  CMD    │  ALT    │  CTRL   │   
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │  <      │    ~    │    !    │    @    │    #    │   |     ││         │  HYPR   │  MEH    │         │         │         │
+   │  <      │    ~    │    !    │    @    │    #    │   |     ││         │  HYPR   │  MEH    │         │         │   >     │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                  │    (    │    )    │    _    ││         │         │         │  
                                  └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘ */ 
@@ -276,6 +370,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 // ▝▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▘
 
+// Make sure combos are always tapped and not held
+bool get_combo_must_tap(uint16_t index, combo_t *combo) {
+    // If you want all combos to be tap-only, just uncomment the next line
+    return true;
+
+}
 
 
 /*
