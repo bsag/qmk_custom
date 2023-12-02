@@ -79,13 +79,12 @@ enum custom_keycodes {
 #define NTAB S(G(KC_RBRC))
 #define BACK G(KC_LBRC)
 #define FWD G(KC_RBRC)
+#define PWIN S(G(KC_GRV)) // cycle backwards through windows of app
+#define NWIN G(KC_GRV)    // cycle forwards through windows of app
 
-#define S_UNDO G(KC_Z)
 #define S_CUT G(KC_X)
 #define S_COPY G(KC_C)
 #define S_PASTE G(KC_V)
-#define S_REDO S(G(KC_Z))
-#define S_SAVE G(KC_S)
 
 // ┌─────────────────────────────────────────────────┐
 // │ d e f i n e   c o m b o s                       │
@@ -251,20 +250,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    │ n a v                                           │      ╭╮╭╮╭╮╭╮
    └─────────────────────────────────────────────────┘      │╰╯╰╯╰╯│
              ┌─────────┬─────────┬─────────┬─────────┬──────╨──┐┌──╨──────┬─────────┬─────────┬─────────┬─────────┐
-     ╌┄┈┈───═╡          │         │         │         │         ││   CAPS  │  HOME   │   UP    │   END   │  PGUP   │   
+     ╌┄┈┈───═╡          │         │         │         │         ││         │  HOME   │   UP    │   END   │  PGUP   │   
              ├─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┤
-             │  CTRL   │  ALT    │  CMD    │   SHFT  │         ││  SAVE   │  LEFT   │  DOWN   │  RIGHT  │  PGDN   │    
+             │  CTRL   │  ALT    │  CMD    │   SHFT  │         ││         │  LEFT   │  DOWN   │  RIGHT  │  PGDN   │    
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │ BACK    │         │         │  MEH    │  HYPR   │         ││  REDO   │  PSTE   │  COPY   │   CUT   │  UNDO   │  FWD    │
+   │ BACK    │         │         │  MEH    │  HYPR   │         ││         │  PWIN   │         │   NWIN  │         │  FWD    │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
-                                 │         │         │         ││   ENT   │ BSPC    │   DEL   │  
+                                 │         │         │         ││   ENT   │  BSPC   │   DEL   │  
                                  └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘ */ 
 
    [_NAV] = LAYOUT(
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
-              _______,  _______,  _______,  _______, _______,    KC_CAPS,  KC_HOME,  KC_UP,    KC_END,   KC_PGUP,
-              KC_LCTL,  KC_LALT,  KC_LGUI,  KC_LSFT, _______,    S_SAVE,   KC_LEFT,  KC_DOWN,  KC_RIGHT, KC_PGDN,  
-    BACK,     _______,  _______,  KC_MEH,   KC_HYPR, _______,    S_REDO,   S_PASTE,  S_COPY,   S_CUT,    S_UNDO,  FWD,
+              _______,  _______,  _______,  _______, _______,    _______,  KC_HOME,  KC_UP,    KC_END,   KC_PGUP,
+              KC_LCTL,  KC_LALT,  KC_LGUI,  KC_LSFT, _______,    _______,  KC_LEFT,  KC_DOWN,  KC_RIGHT, KC_PGDN,  
+    BACK,     _______,  _______,  KC_MEH,   KC_HYPR, _______,    _______,  PWIN,     _______,  NWIN,      _______,   FWD,
                                   _______,  _______, _______,    KC_ENT,   KC_BSPC,   KC_DEL
  ),
  /*
