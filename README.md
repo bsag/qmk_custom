@@ -6,6 +6,12 @@ This repository is for my custom QMK code for both keymaps (i.e. just the keyboa
 I keep this as as separate directory to the forked `qmk_firmware` directory and use the `setup` script to create symlinks into the relevant directories in `qmk_firmware` so that I can build the firmware for my boards and layouts. I shamelessly stole this idea from someone else's QMK configs, but I can't remember which setup now, I'm afraid. I'm happy to include a link if someone recognises it.
 
 ## TOTEM
+
+<figure>
+<img src="./keymap.svg" alt="Miryoku inspired keymap for TOTEM keyboard, showing all six layers" width="100%" />
+<figcaption>Keyboard layout for all layers and combos</figcaption>
+</figure>
+
 Currently (December 2023) my daily driver.
 
 I have a wired and a BLE version of the [TOTEM keyboard](https://github.com/GEIGEIGEIST/TOTEM/tree/main), and this firmware obviously runs the wired version (I have a [ZMK version too](https://github.com/bsag/zmk-config-bsag)). I started with @GEIGEIGEIST's own version of a QMK layout, then tweaked a lot. The layout itself and organisation of the layers is heavily influenced by [miryoku](https://github.com/manna-harbour/miryoku) (hence, 'miryokuish'), but it also uses ideas for combos and key overrides from [urob's config](https://github.com/urob/zmk-config/tree/main), like making `shift+,` into semi-colon, `shift+.` into colon, and `shift+?` into exclamation mark. 
