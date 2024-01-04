@@ -1,18 +1,11 @@
 #include QMK_KEYBOARD_H
-
-
 #include "layout.h"
 #include "features/layermodes.h"
 #include "features/nshot_mod.h"
 #include "features/swapper.h"
 #include "features/tap_hold.h"
-
 #include "features/adaptive_keys.h"
 #include "features/process_records.h"
-#ifdef ACHORDION
-#include "features/achordion.h"
-#endif
-
 
 #define IS_SHIFTED(mods) \
   (mods | get_weak_mods() | get_oneshot_mods() & MOD_MASK_SHIFT);
@@ -39,9 +32,7 @@ bool wap_app_cancel(uint16_t keycode) {
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 
-#ifdef ACHORDION
   if (!process_achordion(keycode, record)) { return false; }
-#endif
 
   process_num_word(keycode, record);
 
@@ -413,7 +404,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t* record) {
 // TODO https://github.com/qmk/qmk_firmware/blob/master/docs/feature_combo.md
 bool get_combo_must_tap(uint16_t index, combo_t* combo) { return false; }
 
-#ifdef ACHORDION
+
 bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t* tap_hold_record,
                      uint16_t other_keycode, keyrecord_t* other_record) {
   // Exceptionally consider the following chords as holds, even though they
@@ -464,4 +455,3 @@ uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
 //     return 100;
 //   }
 // }
-#endif
