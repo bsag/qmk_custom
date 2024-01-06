@@ -6,11 +6,15 @@
 #include "features/tap_hold.h"
 #include "features/adaptive_keys.h"
 #include "features/process_records.h"
+#include "features/achordion.h"
 
 #define IS_SHIFTED(mods) \
   (mods | get_weak_mods() | get_oneshot_mods() & MOD_MASK_SHIFT);
 #define UMLAUT(KC) tap_code16(A(KC))
 #define UPPER_UMLAUT(KC) tap_code16(S(A(KC)))
+
+
+
 
 // ┌─────────────────────────────────────────────────┐
 // │ s W A P P E R                                   │
@@ -410,8 +414,7 @@ bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t* tap_hold_record,
   // Exceptionally consider the following chords as holds, even though they
   // are on the same hand
   switch (tap_hold_keycode) {
-    case UM_CTL:
-    case MEH_SPC:
+    case ENT_CTL:
     case COLON_SYM:
     case ESC_SYM:
       return true;    
@@ -435,7 +438,7 @@ uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
     case NAV_SPC:
     case COLON_SYM:
     case ESC_SYM:
-    case UM_CTL:
+    case ENT_CTL:
       return 0;  // Bypass Achordion for these keys.
   }
 

@@ -131,7 +131,7 @@ enum custom_keycodes {
 #define MAGIC QK_ALT_REPEAT_KEY
 #define REPEAT QK_REPEAT_KEY
 #define REP_SFT LSFT_T(QK_REPEAT_KEY)
-#define ENT_GUI LGUI_T(KC_ENTER)
+#define ENT_CTL LCTL_T(KC_ENTER)
 
 #define ESC_SYM LT(SYM,KC_ESC)
 #define COLON_SYM LT(SYM,KC_COLON)
@@ -146,6 +146,7 @@ enum custom_keycodes {
 #define OS_SYM OSL(SYM)
 #define OS_MEH OSM(MOD_MEH)
 #define UM_CTL LCTL_T(KC_U)
+#define BSPACE LT(NUM,KC_BSPC)
 
 #define ___A___ KC_A
 #define ___B___ KC_B
@@ -208,77 +209,7 @@ enum custom_keycodes {
   ___V___, ___M___, ___L___, ___C___, ___P___,      ___B___, MAGIC,   ___U___, ___O___, _SQUOT_, \
   ___S___, ___T___, ___R___, ___D___, ___Y___,      ___F___, ___N___, ___E___, ___A___, ___I___, \
   ___X___, ___K___, ___J___, ___G___, ___W___,      ___Z___, ___H___, _COMMA_, __DOT__, KC_QUES, \
-                    LT(UTIL,KC_TAB), NAV_SPC, REP_SFT,      ENT_GUI,  LT(NUM,KC_BSPC),  LT(FUN,KC_DEL)
-
-/*
-  b l d w z        ' f o u j 
-  n r t s g        y h a e i
-  q x m c v        k p , . /
-*/
-#define _GRAPHITE \
-  ___B___, ___L___, ___D___, ___W___, ___Z___,      _SQUOT_, ___F___, ___O___, ___U___, ___J___, \
-  ___N___, ___R___, ___T___, ___S___, ___G___,      ___Y___, ___H___, ___A___, ___E___, ___I___, \
-  ___Q___, ___X___, ___M___, ___C___, ___V___,      ___K___, ___P___, _COMMA_, __DOT__, KC_QUES, \
-                    KC_F18, MAGIC_GUI, KC_LGUI,     UM_CTL, NAV_SPC,  KC_F19
-
-/*
-  x c l f ~   ~ y o u '
-  r s n t p   k h e i a
-  ~ w m g b   j d , . ~
-*/
-#define _BIRD \
-  ___X___, ___C___, ___L___, ___F___, ___V___,      ___Z___, ___Y___, ___O___, ___U___, _SQUOT_, \
-  ___R___, ___S___, ___N___, ___T___, ___P___,      ___K___, ___H___, ___E___, ___I___, ___A___, \
-  ___Q___, ___W___, ___M___, ___G___, ___B___,      ___J___, ___D___, _COMMA_, __DOT__, _SLASH_, \
-                    KC_F18, MAGIC_GUI, KC_LGUI,     UM_CTL, NAV_SPC,  KC_F19
-
-
-#define _BASE \
-  ___V___, ___W___, ___F___, ___P___, ___K___,      ___J___, ___L___, ___U___, ___Y___, _SQUOT_, \
-  ___A___, ___R___, ___S___, ___T___, ___G___,      ___M___, ___N___, ___E___, ___I___, ___O___, \
-  _XXXXX_, ___X___, ___C___, ___D___, _XXXXX_,      _XXXXX_, ___H___, _COMMA_ , __DOT__ , _XXXXX_, \
-                    NUM_QUO, NAV_SPC, SPACE_L,      KC_BSLS, OS_LSFT,  NUMWORD
-
-#define _RECURVA \
-  ___F___, ___R___, ___D___, ___P___, ___V___,      ___Q___, ___M___, ___U___, ___O___, ___Y___, \
-  ___S___, ___N___, ___T___, ___C___, ___B___,      __DOT__, ___H___, ___E___, ___A___, ___I___, \
-  ___Z___, ___J___, ___K___, ___G___, ___W___,      ___X___, ___L___, KC_SCLN, _SQUOT_ , _COMMA_, \
-                LT(KC_TAB,UTIL), NAV_SPC, OS_LSFT,   ESC_SYM, LT(NUM,KC_BSPC),  NUMWORD
-
-/*
-  B   Y   O   U           L   D   W   V    Z
-  C   I   E   A           H   T   S   N    Q
-  G   X   J   K           R   M   F   P
-
-*/
-#define _ENGRAM \
-  ___B___, ___Y___, ___O___, ___U___, _SQUOT_,      _DQUOT_, ___L___, ___D___, ___W___, ___V___, \
-  ___C___, ___I___, ___E___, ___A___, _COMMA_,      __DOT__, ___H___, ___T___, ___S___, ___N___, \
-  ___G___, ___X___, ___J___, ___K___, ___Z___,      ___Q___, ___R___, ___M___, ___F___, ___P___, \
-                LT(KC_TAB,UTIL), NAV_SPC, OS_LSFT,   ESC_SYM, LT(NUM,KC_BSPC),  NUMWORD
-
-
-
-/*
-     ╭─────────────────────╮ ╭──────────────────────╮
-ESC  │  X   W   M   G  "[  │ │  #$  .:  ']   J   B  │ BSP
-TAB  │  S   C   N   T   K  | |  ,;   A   E   I   H  │ Tg(Num)
-LSFT │  V   P   L   D  / * │ │  -+   U   O   Y   F  │ RSFT
-     ╰──────╮  App BSP  R  │ │  SPC RET TAB  ╭──────╯
-            ╰──────────────╯ ╰───────────────╯
-*/
-#define _HANDS_DOWN_VV \
-  ___X___, ___W___, ___M___, ___G___, _DQUOT_,      KC_HASH, __DOT__, _SQUOT_, ___J___, ___B___, \
-  ___S___, ___C___, ___N___, ___T___, ___K___,      _COMMA_, ___A___, ___E___, ___I___, ___H___, \
-  ___V___, ___P___, ___L___, ___D___, KC_SLSH,      KC_MINS, ___U___, ___O___, ___Y___, ___F___, \
-                    SPACE_L, ___R___, KC_MEH,       UM_CTL,  NAV_SPC,  LT(NUM,KC_TAB)
-
-#define _SNTH \
-  ___X___, ___P___, ___D___, ___M___, ___Q___,      KC_EQL,  ___Y___, ___O___, ___U___, _COMMA_, \
-  ___S___, ___N___, ___T___, ___H___, ___V___,      ___G___, ___C___, ___A___, ___E___, ___I___, \
-  ___F___, ___B___, ___K___, ___L___, ___J___,      ___Z___, ___W___, _DQUOT_, KC_SLSH, __DOT__, \
-                    SPACE_L, ___R___, KC_MEH,       UM_CTL,  NAV_SPC,  LT(NUM,KC_TAB)
-
+           LT(UTIL,KC_TAB), NAV_SPC, OS_LSFT,       ENT_CTL,  BSPACE,  LT(FUN,KC_DEL)
 
 #define _UTIL \
   SW_APP,  TAB_L,   TAB_R,   SW_WIN,  KC_NO,               KC_NO, KC_BSPC, KC_UP,   KC_DEL,  KC_NO, \
@@ -293,10 +224,10 @@ LSFT │  V   P   L   D  / * │ │  -+   U   O   Y   F  │ RSFT
                     _______, _______, _______      ,_______, _______, _______
 
 #define _NUM2 \
-  KC_SLSH ,___7___, KC_LALT, KC_LCTL, KC_PLUS      ,_______, ___1___, ___2___, ___3___, _COMMA_, \
-  ___0___, _XXXXX_, KC_LGUI, KC_LSFT, OSM(MOD_MEH)      ,_______, ___4___, ___5___, ___6___, _______ , \
-  KC_PAST ,___4___, ___5___, ___6___, KC_EQL       ,KC_SLSH, ___7___, ___8___, ___9___, __DOT__, \
-                    _______, KC_SPC,  _______      ,_______, ___0___, _______
+  KC_PLUS ,___7___, ___8___, ___9___, KC_PAST      ,_______, _______, _______, _______, _COMMA_, \
+  ___0___, ___4___, ___5___, ___6___, KC_EQL       ,_______, KC_LSFT, KC_LGUI, KC_LALT, KC_LCTL , \
+  KC_MINS ,___1___, ___2___, ___3___, KC_SLSH       ,_______, _______, _______, _______, __DOT__, \
+                    _______, _______, _______      ,_______, _______, _______
 
 #define _ALWAYS_ACC \
   _______ ,KC_ESC, KC_COLON, _______, _______      ,_______, _______,  _______, _______, _______, \
@@ -304,13 +235,6 @@ LSFT │  V   P   L   D  / * │ │  -+   U   O   Y   F  │ RSFT
   _______ ,_______, _______, S(KC_1), _______      ,_______, _______,  _______, _______, QK_BOOT, \
                     _______, _______, _______      ,_______, _______, _______
 
-/*
-#define _SYM \
-  KC_TILD ,KC_PLUS ,KC_PAST, KC_EXLM, _______      ,_______, KC_HASH,  KC_AT,   KC_CIRC, _COMMA_, \
-  KC_PIPE ,KC_LCBR ,KC_RCBR ,KC_MINS, KC_BSLS      ,KC_GRV,  KC_QUES,  KC_LBRC, KC_RBRC, KC_DLR , \
-  KC_UNDS ,KC_LT   ,KC_GT,   KC_PERC, _______      ,KC_SLSH, KC_AMPR,  KC_LPRN, KC_RPRN, __DOT__, \
-                    _______, _______, _______      ,_______, _______, _______
-*/
 #define _SYM \
   KC_GRV  ,KC_LT   ,KC_GT,   KC_AT  , KC_DOT       ,KC_AMPR, MAGIC,    KC_LBRC, KC_RBRC, _______, \
   KC_EXLM ,KC_MINS ,KC_PLUS ,KC_EQL,  KC_HASH      ,KC_PIPE, KC_COLON, KC_LPRN, KC_RPRN, KC_PERC , \
@@ -321,13 +245,13 @@ LSFT │  V   P   L   D  / * │ │  -+   U   O   Y   F  │ RSFT
   KC_NO,        W_ROTATE,     WN_NORTH,     W_ROTATE2,    KC_PLUS,      KC_BSLS, MEH(KC_6),    MEH(KC_7),      MEH(KC_8),     KC_TILD, \
   SPACE_L,      WN_WEST,      A(KC_F),      WN_EAST,      SPACE_R,      KC_NO,   MEH(KC_4),    MEH(KC_5),      MEH(KC_6),     LALT_T(KC_6), \
   KC_NO,        KC_NO,        WN_SOUTH,     KC_NO,        KC_NO,        KC_NO,   MEH(KC_1),    MEH(KC_2),      MEH(KC_3),     KC_SLSH, \
-                              NAV_SPC,      KC_1,         KC_2,         KC_2,  KC_1,   MAGIC_GUI
+                                _______, _______, _______      ,_______, _______, _______
 
 #define _FUN \
   KC_NO,        W_ROTATE,     WN_NORTH,     W_ROTATE2,    KC_PLUS,           KC_BSLS, KC_F7,        KC_F8,           KC_F9,      KC_F10, \
   OS_LALT,      OS_LCTL,      OS_LGUI,      OS_LSFT,      OSM(MOD_MEH),      KC_NO,   KC_F4,        KC_F5,           KC_F6,      KC_F11, \
   KC_NO,        KC_NO,        WN_SOUTH,     KC_NO,        KC_NO,             KC_NO,   KC_F1,        KC_F2,           KC_F3,      KC_F12, \
-                              KC_NO,        KC_NO,        KC_NO,             KC_2,    KC_1,         MAGIC_GUI
+                                _______, _______, _______      ,_______, _______, _______
 
 
 // Layout aliases for json keymap
