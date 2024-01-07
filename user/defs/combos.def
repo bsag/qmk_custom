@@ -12,6 +12,7 @@ COMB(CMB_NUM,         NUMWORD,          ___E___, NAV_SPC)
 COMB(CMB_Q,           ___Q___,          ___X___, ___W___)
 COMB(CMB_Z,           ___Z___,          ___W___, ___M___)
 COMB(CMB_CANCEL,	    CANCEL,		        ___S___, ___I___)
+COMB(CMB_NUMWORD,	    NUMWORD,		        NAV_SPC, OS_LSFT)
 // COMB(CMB_ESC,         ESC_SYM,          ___T___, ___H___)
 // COMB(CMB_COLON,       KC_COLON,         ___N___, ___A___)
 // COMB(CMB_SCLN,        KC_SCLN,          ___N___, KC_LPRN)
@@ -39,7 +40,12 @@ COMB(CMB_SLSH,         KC_SLSH,        ___E___, _COMMA_)
 COMB(CMB_PIPE,         KC_PIPE,        ___A___, __DOT__)
 
 
-// parenths....
+// Horizontal
+COMB(CMB_ESC,         KC_ESC,        ___M___,   ___L___)
+COMB(CMB_TAB,         KC_TAB,        ___T___,   ___R___, ___D___)
+COMB(CMB_ENTER,       KC_ENTER,      ___N___,   ___E___, ___A___)
+
+
 COMB(CMB_LBRC,         KC_LBRC,        MAGIC,   ___U___)
 COMB(CMB_RBRC,         KC_RBRC,        ___U___, ___O___)
 COMB(CMB_LPRN,         KC_LPRN,        ___N___, ___E___)

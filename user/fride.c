@@ -458,3 +458,24 @@ uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
 //     return 100;
 //   }
 // }
+
+
+
+
+// ┌─────────────────────────────────────────────────┐
+// │ d e f i n e   k e y   o v e r r i d e s         │
+// └─────────────────────────────────────────────────┘
+
+// shift + , = ?
+const key_override_t ovr1 = ko_make_basic(MOD_MASK_SHIFT, _COMMA_, KC_SCLN);
+const key_override_t ovr2 = ko_make_basic(MOD_MASK_SHIFT, __DOT__, KC_COLON);
+const key_override_t ovr3 = ko_make_basic(MOD_MASK_SHIFT, KC_QUES, KC_EXLM);
+// const key_override_t ovr3 = ko_make_basic(MOD_MASK_SHIFT, __DOT__, KC_EXLM);
+
+// This globally defines all key overrides to be used ├───────────┐
+const key_override_t **key_overrides = (const key_override_t *[]){
+  &ovr1,
+  &ovr2,
+  &ovr3,
+  NULL // Null terminate the array of overrides!
+};

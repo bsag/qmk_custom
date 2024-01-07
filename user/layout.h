@@ -209,7 +209,7 @@ enum custom_keycodes {
   ___V___, ___M___, ___L___, ___C___, ___P___,      ___B___, MAGIC,   ___U___, ___O___, _SQUOT_, \
   ___S___, ___T___, ___R___, ___D___, ___Y___,      ___F___, ___N___, ___E___, ___A___, ___I___, \
   ___X___, ___K___, ___J___, ___G___, ___W___,      ___Z___, ___H___, _COMMA_, __DOT__, KC_QUES, \
-           LT(UTIL,KC_TAB), NAV_SPC, OS_LSFT,       ENT_CTL,  BSPACE,  LT(FUN,KC_DEL)
+           LT(UTIL,KC_TAB), NAV_SPC, ENT_CTL,       NUMWORD,  OS_LSFT, LT(FUN,KC_DEL)
 
 #define _UTIL \
   SW_APP,  TAB_L,   TAB_R,   SW_WIN,  KC_NO,               KC_NO, KC_BSPC, KC_UP,   KC_DEL,  KC_NO, \
@@ -218,9 +218,9 @@ enum custom_keycodes {
                     KC_SPC, KC_SPC,   KC_F19            , _______, _XXXXX_, _______
 
 #define _NUM \
-  KC_TILD ,KC_PLUS ,KC_PAST, KC_EXLM, _______      ,_______, KC_HASH,  KC_AT,   KC_CIRC, _COMMA_, \
-  ___7___ ,___5___ ,___3___ ,___1___, KC_BSLS      ,___0___, ___0___,  ___2___, ___4___, ___6___ , \
-  _______ ,KC_LT   ,KC_GT,   ___9___, _______      ,KC_SLSH, ___8___,  KC_LPRN, KC_RPRN, __DOT__, \
+  _______ ,KC_AT   ,KC_HASH, KC_DLR,  KC_PERC      ,KC_CIRC, KC_PLUS,  KC_PAST, KC_AMPR, _COMMA_, \
+  ___7___ ,___5___ ,___3___ ,___1___, ___9___      ,___8___, ___0___,  ___2___, ___4___, ___6___ , \
+  _______ ,KC_GRV ,KC_BSLS,  KC_EQL,  KC_TILD      ,KC_UNDS, KC_MINS,  _______, _______, _______, \
                     _______, _______, _______      ,_______, _______, _______
 
 #define _NUM2 \
