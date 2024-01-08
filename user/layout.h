@@ -154,8 +154,8 @@ enum custom_keycodes {
 #define ___D___ LSFT_T(KC_D)
 #define ___E___ RGUI_T(KC_E)
 #define ___F___ KC_F
-#define ___G___ KC_G
-#define ___H___ KC_H
+#define ___G___ MEH_T(KC_G)
+#define ___H___ MEH_T(KC_H)
 #define ___I___ RCTL_T(KC_I)
 #define ___J___ KC_J
 #define ___K___ KC_K
