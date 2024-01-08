@@ -148,7 +148,7 @@ enum custom_keycodes {
 #define UM_CTL LCTL_T(KC_U)
 #define BSPACE LT(NUM,KC_BSPC)
 
-#define ___A___ KC_A
+#define ___A___ LALT_T(KC_A)
 #define ___B___ KC_B
 #define ___C___ KC_C
 #define ___D___ LSFT_T(KC_D)
@@ -218,9 +218,9 @@ enum custom_keycodes {
                     KC_SPC, KC_SPC,   KC_F19            , _______, _XXXXX_, _______
 
 #define _NUM \
-  _______ ,KC_AT   ,KC_HASH, KC_DLR,  KC_PERC      ,KC_CIRC, KC_PLUS,  KC_PAST, KC_AMPR, _COMMA_, \
-  ___7___ ,___5___ ,___3___ ,___1___, ___9___      ,___8___, ___0___,  ___2___, ___4___, ___6___ , \
-  _______ ,KC_GRV ,KC_BSLS,  KC_EQL,  KC_TILD      ,KC_UNDS, KC_MINS,  _______, _______, _______, \
+  KC_LT   ,KC_AT   ,KC_HASH, KC_DLR  ,KC_PERC      ,KC_CIRC, KC_PLUS,  KC_PAST, KC_AMPR, _COMMA_, \
+  ___7___ ,___5___ ,___3___ ,___1___ ,___9___      ,___8___, ___0___,  ___2___, ___4___, ___6___ , \
+  KC_GT   ,KC_GRV  ,KC_BSLS ,KC_EQL  ,KC_TILD      ,KC_UNDS, KC_MINS,  KC_SLSH, KC_PIPE, __DOT__, \
                     _______, _______, _______      ,_______, _______, _______
 
 #define _NUM2 \
