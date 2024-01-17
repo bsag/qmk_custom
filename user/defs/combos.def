@@ -1,49 +1,68 @@
 /*
-  ___V___, ___M___, ___L___, ___C___, ___P___,      ___B___, MAGIC,   ___U___, ___O___, _SQUOT_, \
-  ___S___, ___T___, ___R___, ___D___, ___Y___,      ___F___, ___N___, ___E___, ___A___, ___I___, \
-  ___X___, ___K___, ___J___, ___G___, ___W___,      ___Z___, ___H___, _COMMA_, __DOT__, _SLASH_, \
-                    LT(UTIL,KC_TAB), NAV_SPC, OS_LSFT,      UM_CTL,  LT(NUM,KC_BSPC),  LT(FUN,KC_DEL)
-
+  ___F___, ___R___, ___D___, ___P___, ___V___,      ___Q___, ___M___, ___U___, ___O___, ___Y___, \
+  ___S___, ___N___, ___T___, ___C___, ___B___,      _SLASH_, ___H___, ___E___, ___A___, ___I___, \
+  ___Z___, ___J___, ___K___, ___G___, ___W___,      ___X___, ___L___, LPAREN, RPAREN, _SQUOT_, \
+           LT(UTIL,KC_BSPC), NAV_SPC, NUMWORD,       ENT_CTL,  OS_LSFT, LT(FUN,KC_DEL)
 */
 
  
-COMB(BOOT,            QK_BOOT,          ___V___, _SQUOT_)
-COMB(CMB_NUM,         NUMWORD,          ___E___, NAV_SPC)
+COMB(BOOT,            QK_BOOT,          ___F___, ___Y___)
+COMB(CMB_NUM,         NUMWORD,          OS_LSFT, NAV_SPC)
 COMB(CMB_Q,           ___Q___,          ___V___, ___M___)
 COMB(CMB_CANCEL,	    CANCEL,		        ___S___, ___I___)
-COMB(CMB_NUMWORD,	    NUMWORD,		        NAV_SPC, OS_LSFT)
 
-// for SturdY!
-COMB(CMB_AT,           KC_AT,          ___M___, ___T___)
-COMB(CMB_HASH,         KC_HASH,        ___L___, ___R___)
-COMB(CMB_DLR,          KC_DLR,         ___C___, ___D___)
-COMB(CMB_PERC,         KC_PERC,        ___P___, ___Y___)
 
-COMB(CMB_CIRC,         KC_CIRC,        ___B___, ___F___)
-COMB(CMB_PLUS,         KC_PLUS,        MAGIC,   ___N___)
+
+
+
+COMB(CMB_AT,           KC_AT,          ___R___, ___N___)
+COMB(CMB_HASH,         KC_HASH,        ___D___, ___T___)
+COMB(CMB_DLR,          KC_DLR,         ___P___, ___C___)
+COMB(CMB_PERC,         KC_PERC,        ___W___, ___B___)
+
+COMB(CMB_CIRC,         KC_CIRC,        ___Q___, __DOT__)
+COMB(CMB_PLUS,         KC_PLUS,        ___M___, ___H___)
 COMB(CMB_PAST,         KC_PAST,        ___U___, ___E___)
 COMB(CMB_AMPR,         KC_AMPR,        ___O___, ___A___)
 
-COMB(CMB_GRV,          KC_GRV,         ___T___, ___K___)
-COMB(CMB_BSLS,         KC_BSLS,        ___R___, ___J___)
-COMB(CMB_EQL,          KC_EQL,         ___D___, ___G___)
-COMB(CMB_TILD,         KC_TILD,        ___Y___, ___W___)
+COMB(CMB_GRV,          KC_GRV,         ___N___, ___J___)
+COMB(CMB_BSLS,         KC_BSLS,        ___T___, ___K___)
+COMB(CMB_EQL,          KC_EQL,         ___C___, ___G___)
+COMB(CMB_TILD,         KC_TILD,        ___B___, ___W___)
 
-COMB(CMB_UNDS,         KC_UNDS,        ___F___, ___Z___)
-COMB(CMB_MINS,         KC_MINS,        ___N___, ___H___)
-COMB(CMB_SLSH,         KC_SLSH,        ___E___, _COMMA_)
-COMB(CMB_PIPE,         KC_PIPE,        ___A___, __DOT__)
+COMB(CMB_UNDS,         KC_UNDS,        __DOT__, ___X___)
+COMB(CMB_MINS,         KC_MINS,        ___H___, ___L___)
+COMB(CMB_SLSH,         KC_SLSH,        ___E___, LPAREN)
+COMB(CMB_PIPE,         KC_PIPE,        ___A___, RPAREN)
 
 
 // Horizontal
 COMB(CMB_ESC,         KC_ESC,        ___M___,   ___L___)
-COMB(CMB_TAB,         KC_TAB,        ___T___,   ___R___, ___D___)
-COMB(CMB_ENTER,       KC_ENTER,      ___N___,   ___E___, ___A___)
+COMB(CMB_TAB,         KC_TAB,        ___N___,   ___T___, ___C___)
+COMB(CMB_ENTER,       KC_ENTER,      ___H___,   ___E___, ___A___)
 
 
-COMB(CMB_LBRC,         KC_LBRC,        MAGIC,   ___U___)
+
+COMB(CMB_SQUAOT,       KC_QUOT,        ___H___, ___A___)
+COMB(CMB_DQUAOT,       KC_DQUO,        ___N___, ___C___)
+
+COMB(CMB_LBRC,         KC_LBRC,        ___M___, ___U___)
 COMB(CMB_RBRC,         KC_RBRC,        ___U___, ___O___)
-COMB(CMB_LPRN,         KC_LPRN,        ___N___, ___E___)
-COMB(CMB_RPRN,         KC_RPRN,        ___E___, ___A___)
-COMB(CMB_LCBR,         KC_LCBR,        ___H___, _COMMA_)
-COMB(CMB_RCBR,         KC_RCBR,        _COMMA_, __DOT__)
+COMB(CMB_ESC_SYM,      ESC_SYM,        ___T___, ___C___)
+COMB(CMB_CLN_SYM,      COLON_SYM,      ___H___, ___E___)
+COMB(CMB_LCBR,         KC_LCBR,        ___L___, LPAREN)
+COMB(CMB_RCBR,         KC_RCBR,        LPAREN, RPAREN)
+
+COMB(CMB_SCLN,         KC_SCLN,        ___H___, LPAREN)
+
+// thumbs numbers 
+COMB(CMB_0,         KC_0,          OS_LSFT, ___H___)
+COMB(CMB_2,         KC_2,          OS_LSFT, ___A___)
+COMB(CMB_4,         KC_4,          OS_LSFT, ___E___)
+COMB(CMB_6,         KC_6,          OS_LSFT, ___I___)
+COMB(CMB_8,         KC_8,          OS_LSFT, ___L___)
+COMB(CMB_1,         KC_1,          NAV_SPC, ___C___)
+COMB(CMB_3,         KC_3,          NAV_SPC, ___T___)
+COMB(CMB_5,         KC_5,          NAV_SPC, ___N___)
+COMB(CMB_7,         KC_7,          NAV_SPC, ___S___)
+COMB(CMB_9,         KC_9,          NAV_SPC, ___G___)

@@ -132,6 +132,7 @@ enum custom_keycodes {
 #define REPEAT QK_REPEAT_KEY
 #define REP_SFT LSFT_T(QK_REPEAT_KEY)
 #define ENT_CTL LCTL_T(KC_ENTER)
+#define MAG_ALT LALT_T(MAGIC)
 
 #define ESC_SYM LT(SYM,KC_ESC)
 #define COLON_SYM LT(SYM,KC_COLON)
@@ -148,6 +149,65 @@ enum custom_keycodes {
 #define UM_CTL LCTL_T(KC_U)
 #define BSPACE LT(NUM,KC_BSPC)
 
+#define ___A___ RCTL_T(KC_A)
+#define ___B___ RALT_T(KC_B)
+#define ___C___ LGUI_T(KC_C)
+#define ___D___ KC_D
+#define ___E___ LALT_T(KC_E)
+#define ___F___ KC_F
+#define ___G___ MEH_T(KC_G)
+#define ___H___ RGUI_T(KC_H)
+#define ___I___ KC_I
+#define ___J___ KC_J
+#define ___K___ KC_K
+#define ___L___ MEH_T(KC_L)
+#define ___M___ KC_M
+#define ___N___ LCTL_T(KC_N)
+#define ___O___ KC_O
+#define ___P___ KC_P
+#define ___Q___ KC_Q
+#define ___R___ KC_R
+#define ___S___ KC_S
+#define ___T___ LALT_T(KC_T)
+#define ___U___ KC_U
+#define ___V___ KC_V
+#define ___W___ KC_W
+#define ___X___ KC_X
+#define ___Y___ KC_Y
+#define ___Z___ KC_Z
+#define _COMMA_ KC_COMM
+#define __DOT__ KC_DOT
+#define _SLASH_ RALT_T(KC_SLSH)
+#define _SQUOT_ KC_QUOT
+#define _DQUOT_ KC_DQUO
+#define _MINUS_ KC_MINS
+#define __HASH_ KC_HASH
+#define _SEMIC_ KC_SCLN
+#define _QUEST_ KC_QUES
+
+#define ___0___ RGUI_T(KC_0)
+#define ___2___ RALT_T(KC_2)
+#define ___4___ RCTL_T(KC_4)
+#define ___6___ RSFT_T(KC_6)
+#define ___8___ MEH_T(KC_8)
+
+#define ___1___ LGUI_T(KC_1)
+#define ___3___ LALT_T(KC_3)
+#define ___5___ LCTL_T(KC_5)
+#define ___7___ LSFT_T(KC_7)
+#define ___9___ MEH_T(KC_9)
+
+#define _______ KC_TRNS
+#define _XXXXX_ KC_NO
+#define ___________________________________________ \
+  _______, _______, _______, _______, _______
+
+
+// ----------------
+// layout wrappers inspired by https://github.com/pixelbreaker/qmk_userspace
+
+/*
+MAGIC STURDY
 #define ___A___ LALT_T(KC_A)
 #define ___B___ KC_B
 #define ___C___ KC_C
@@ -183,33 +243,23 @@ enum custom_keycodes {
 #define __HASH_ KC_HASH
 #define _SEMIC_ KC_SCLN
 #define _QUEST_ KC_QUES
-
-#define ___0___ KC_0
-#define ___2___ KC_2
-#define ___4___ KC_4
-#define ___6___ KC_6
-#define ___8___ KC_8
-
-#define ___1___ KC_1
-#define ___3___ KC_3
-#define ___5___ KC_5
-#define ___7___ KC_7
-#define ___9___ KC_9
-
-#define _______ KC_TRNS
-#define _XXXXX_ KC_NO
-#define ___________________________________________ \
-  _______, _______, _______, _______, _______
-
-
-// ----------------
-// layout wrappers inspired by https://github.com/pixelbreaker/qmk_userspace
-
+*/
 #define _STURDY \
   ___V___, ___M___, ___L___, ___C___, ___P___,      ___B___, MAGIC,   ___U___, ___O___, _SQUOT_, \
   ___S___, ___T___, ___R___, ___D___, ___Y___,      ___F___, ___N___, ___E___, ___A___, ___I___, \
   ___X___, ___K___, ___J___, ___G___, ___W___,      ___Z___, ___H___, _COMMA_, __DOT__, KC_QUES, \
-           LT(UTIL,KC_TAB), NAV_SPC, ENT_CTL,       NUMWORD,  OS_LSFT, LT(FUN,KC_DEL)
+           LT(UTIL,KC_TAB), NAV_SPC, ENT_CTL,       NUMWORD, OS_LSFT, LT(FUN,KC_DEL)
+
+/*
+  f r d p v  q j u o y 
+  s n t c b  . h e a i 
+  z x k g w  m l ; ' , 
+*/
+#define _RECURVA \
+  ___F___, ___R___, ___D___, ___P___, ___V___,      ___Q___, ___M___, ___U___, ___O___, ___Y___, \
+  ___S___, ___N___, ___T___, ___C___, ___B___,      __DOT__, ___H___, ___E___, ___A___, ___I___, \
+  ___Z___, ___J___, ___K___, ___G___, ___W___,      ___X___, ___L___, LPAREN, RPAREN, _COMMA_, \
+           LT(UTIL,KC_BSPC), NAV_SPC, MAG_ALT,      ENT_CTL,  OS_LSFT, LT(FUN,KC_DEL)
 
 #define _UTIL \
   SW_APP,  TAB_L,   TAB_R,   SW_WIN,  KC_NO,               KC_NO, KC_BSPC, KC_UP,   KC_DEL,  KC_NO, \
@@ -218,9 +268,9 @@ enum custom_keycodes {
                     KC_SPC, KC_SPC,   KC_F19            , _______, _XXXXX_, _______
 
 #define _NUM \
-  KC_LT   ,KC_AT   ,KC_HASH, KC_DLR  ,KC_PERC      ,KC_CIRC, KC_PLUS,  KC_PAST, KC_AMPR, _COMMA_, \
-  ___7___ ,___5___ ,___3___ ,___1___ ,___9___      ,___8___, ___0___,  ___2___, ___4___, ___6___ , \
-  KC_GT   ,KC_GRV  ,KC_BSLS ,KC_EQL  ,KC_TILD      ,KC_UNDS, KC_MINS,  KC_SLSH, KC_PIPE, __DOT__, \
+  KC_GRV  ,KC_EQL  ,KC_MINS, KC_UNDS ,KC_PAST      ,KC_BSLS, KC_HASH,  KC_AMPR, KC_PIPE, KC_TILD, \
+  ___7___ ,___5___ ,___3___ ,___1___ ,KC_PLUS      ,_SLASH_, ___0___,  ___2___, ___4___, ___6___ , \
+  KC_CIRC ,KC_COLON,KC_SCLN ,___9___ ,KC_LT        ,KC_GT, ___8___,  _COMMA_, __DOT__, __DOT__, \
                     _______, _______, _______      ,_______, _______, _______
 
 #define _NUM2 \
