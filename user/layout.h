@@ -161,7 +161,7 @@ enum custom_keycodes {
 #define ___J___ KC_J
 #define ___K___ KC_K
 #define ___L___ KC_L
-#define ___M___ KC_M
+#define ___M___ MEH_T(KC_M)
 #define ___N___ LGUI_T(KC_N)
 #define ___O___ KC_O
 #define ___P___ KC_P
@@ -177,7 +177,7 @@ enum custom_keycodes {
 #define ___Z___ KC_Z
 #define _COMMA_ KC_COMM
 #define __DOT__ KC_DOT
-#define _SLASH_ RALT_T(KC_SLSH)
+#define _SLASH_ KC_SLSH
 #define _SQUOT_ KC_QUOT
 #define _DQUOT_ KC_DQUO
 #define _MINUS_ KC_MINS

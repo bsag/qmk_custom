@@ -13,24 +13,23 @@
 
 /*
 // https://sites.google.com/alanreiser.com/handsdown/home/hands-down-neu#h.bv3bay1cp21z
-  pz xq  h  g  j   #@ .: /* "! '?  
-   c  s  n  t  k   ,; a  e  i  m  
-   b  f  l  d  v   -+ u  o  y  w  
-               r   ␣  
+  w b g d z   ; / = k '
+  c n s t k   , i e l a
+  y p f m v   / u o h -
+        r       _
 */
 
  
-COMB(BOOT,            QK_BOOT,          ___P___, _DQUOT_)
+COMB(BOOT,            QK_BOOT,          ___W___, _SQUOT_)
 COMB(CMB_NUM,         NUMWORD,          ___R___, NAV_SPC)
-COMB(CMB_Q,           ___Q___,          ___P___, ___X___)
-COMB(CMB_Z,           ___Z___,          ___X___, ___H___)
+COMB(CMB_X,           ___X___,          ___B___, ___G___)
 COMB(CMB_CANCEL,	    CANCEL,		        ___C___, ___M___)
 
 
-COMB(CMB_AT,           KC_AT,          ___R___, ___N___)
-COMB(CMB_HASH,         KC_HASH,        ___D___, ___T___)
-COMB(CMB_DLR,          KC_DLR,         ___P___, ___C___)
-COMB(CMB_PERC,         KC_PERC,        ___W___, ___B___)
+COMB(CMB_AT,           KC_AT,          ___B___, ___N___)
+COMB(CMB_HASH,         KC_HASH,        ___G___, ___S___)
+COMB(CMB_DLR,          KC_DLR,         ___D___, ___T___)
+COMB(CMB_PERC,         KC_PERC,        ___Z___, ___K___)
 
 COMB(CMB_CIRC,         KC_CIRC,        ___Q___, __DOT__)
 COMB(CMB_PLUS,         KC_PLUS,        ___M___, ___H___)
