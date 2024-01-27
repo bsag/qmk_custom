@@ -149,27 +149,27 @@ enum custom_keycodes {
 #define UM_CTL LCTL_T(KC_U)
 #define BSPACE LT(NUM,KC_BSPC)
 
-#define ___A___ RCTL_T(KC_A)
-#define ___B___ RALT_T(KC_B)
-#define ___C___ LGUI_T(KC_C)
-#define ___D___ KC_D
-#define ___E___ LALT_T(KC_E)
+#define ___A___ RSFT_T(KC_A)
+#define ___B___ KC_B
+#define ___C___ LCTL_T(KC_C)
+#define ___D___ MEH_T(KC_D)
+#define ___E___ RGUI_T(KC_E)
 #define ___F___ KC_F
-#define ___G___ MEH_T(KC_G)
-#define ___H___ RGUI_T(KC_H)
-#define ___I___ KC_I
+#define ___G___ KC_G
+#define ___H___ KC_H
+#define ___I___ RSFT_T(KC_I)
 #define ___J___ KC_J
 #define ___K___ KC_K
-#define ___L___ MEH_T(KC_L)
+#define ___L___ KC_L
 #define ___M___ KC_M
-#define ___N___ LCTL_T(KC_N)
+#define ___N___ LGUI_T(KC_N)
 #define ___O___ KC_O
 #define ___P___ KC_P
 #define ___Q___ KC_Q
 #define ___R___ KC_R
-#define ___S___ KC_S
-#define ___T___ LALT_T(KC_T)
-#define ___U___ KC_U
+#define ___S___ LALT_T(KC_S)
+#define ___T___ LSFT_T(KC_T)
+#define ___U___ MEH_T(KC_U)
 #define ___V___ KC_V
 #define ___W___ KC_W
 #define ___X___ KC_X
@@ -202,54 +202,9 @@ enum custom_keycodes {
 #define ___________________________________________ \
   _______, _______, _______, _______, _______
 
-
+// clang-format off
 // ----------------
 // layout wrappers inspired by https://github.com/pixelbreaker/qmk_userspace
-
-/*
-MAGIC STURDY
-#define ___A___ LALT_T(KC_A)
-#define ___B___ KC_B
-#define ___C___ KC_C
-#define ___D___ LSFT_T(KC_D)
-#define ___E___ RGUI_T(KC_E)
-#define ___F___ KC_F
-#define ___G___ MEH_T(KC_G)
-#define ___H___ MEH_T(KC_H)
-#define ___I___ RCTL_T(KC_I)
-#define ___J___ KC_J
-#define ___K___ KC_K
-#define ___L___ KC_L
-#define ___M___ KC_M
-#define ___N___ RSFT_T(KC_N)
-#define ___O___ KC_O
-#define ___P___ KC_P
-#define ___Q___ KC_Q
-#define ___R___ LGUI_T(KC_R)
-#define ___S___ LCTL_T(KC_S)
-#define ___T___ LALT_T(KC_T)
-#define ___U___ KC_U
-#define ___V___ KC_V
-#define ___W___ KC_W
-#define ___X___ KC_X
-#define ___Y___ KC_Y
-#define ___Z___ KC_Z
-#define _COMMA_ KC_COMM
-#define __DOT__ KC_DOT
-#define _SLASH_ KC_SLSH
-#define _SQUOT_ KC_QUOT
-#define _DQUOT_ KC_DQUO
-#define _MINUS_ KC_MINS
-#define __HASH_ KC_HASH
-#define _SEMIC_ KC_SCLN
-#define _QUEST_ KC_QUES
-*/
-#define _STURDY \
-  ___V___, ___M___, ___L___, ___C___, ___P___,      ___B___, MAGIC,   ___U___, ___O___, _SQUOT_, \
-  ___S___, ___T___, ___R___, ___D___, ___Y___,      ___F___, ___N___, ___E___, ___A___, ___I___, \
-  ___X___, ___K___, ___J___, ___G___, ___W___,      ___Z___, ___H___, _COMMA_, __DOT__, KC_QUES, \
-           LT(UTIL,KC_TAB), NAV_SPC, ENT_CTL,       NUMWORD, OS_LSFT, LT(FUN,KC_DEL)
-
 /*
   f r d p v  q j u o y 
   s n t c b  . h e a i 
@@ -260,6 +215,25 @@ MAGIC STURDY
   ___S___, ___N___, ___T___, ___C___, ___B___,      __DOT__, ___H___, ___E___, ___A___, ___I___, \
   ___Z___, ___J___, ___K___, ___G___, ___W___,      ___X___, ___L___, LPAREN, RPAREN, _COMMA_, \
            LT(UTIL,KC_BSPC), NAV_SPC, MAG_ALT,      ENT_CTL,  OS_LSFT, LT(FUN,KC_DEL)
+
+/*
+// https://sites.google.com/alanreiser.com/handsdown/home/hands-down-neu#h.bv3bay1cp21z
+  pz xq  h  g  j   #@ .: /* "! '?  
+   c  s  n  t  k   ,; a  e  i  m  
+   b  f  l  d  v   -+ u  o  y  w  
+               r   ␣  
+*/
+#define _RHODIUM \
+  ___P___, ___X___, ___H___, ___G___, ___J___,      ___Z___, __DOT__, _SLASH_, _SQUOT_, _DQUOT_, \
+  ___C___, ___S___, ___N___, ___T___, ___K___,      _COMMA_, ___A___, ___E___, ___I___, ___M___, \
+  ___B___, ___F___, ___L___, ___D___, ___V___,      ___Z___, ___U___, ___O___, ___Y___, ___W___, \
+           LT(UTIL,KC_BSPC), ___R___, MAG_ALT,      ENT_CTL,  NAV_SPC, LT(FUN,KC_DEL)
+
+#define _MITHRIL \
+  ___W___, ___B___, ___G___, ___D___, ___Z___,      KC_SCLN, __DOT__, KC_EQL,  ___J___, _SQUOT_, \
+  ___C___, ___N___, ___S___, ___T___, ___K___,      _COMMA_, ___I___, ___E___, ___L___, ___A___, \
+  ___Y___, ___P___, ___F___, ___M___, ___V___,      KC_SLSH, ___U___, ___O___, ___H___, KC_MINS, \
+           LT(UTIL,KC_BSPC), ___R___, MAG_ALT,      ENT_CTL,  NAV_SPC, LT(FUN,KC_DEL)
 
 #define _UTIL \
   SW_APP,  TAB_L,   TAB_R,   SW_WIN,  KC_NO,               KC_NO, KC_BSPC, KC_UP,   KC_DEL,  KC_NO, \

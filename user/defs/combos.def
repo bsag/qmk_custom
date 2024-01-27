@@ -1,18 +1,30 @@
 /*
   ___F___, ___R___, ___D___, ___P___, ___V___,      ___Q___, ___M___, ___U___, ___O___, ___Y___, \
+  ___F___, ___R___, ___D___, ___P___, ___V___,      ___Q___, ___M___, ___U___, ___O___, ___Y___, \
   ___S___, ___N___, ___T___, ___C___, ___B___,      _SLASH_, ___H___, ___E___, ___A___, ___I___, \
   ___Z___, ___J___, ___K___, ___G___, ___W___,      ___X___, ___L___, LPAREN, RPAREN, _SQUOT_, \
            LT(UTIL,KC_BSPC), NAV_SPC, NUMWORD,       ENT_CTL,  OS_LSFT, LT(FUN,KC_DEL)
+
+
+  ___B___, ___Y___, ___O___, ___U___, _SQUOT_ ,        _DQUOT_, ___L___, ___D___, ___W___, ___V___, \
+  ___C___, ___I___, ___E___, ___A___, _COMMA_,         __DOT__, ___H___, ___T___, ___S___, ___N___, \
+  ___G___, ___X___, ___J___, ___K___, _MINUS_,         _QUEST_, ___R___, ___M___, ___F___, ___P___, \
+*/
+
+/*
+// https://sites.google.com/alanreiser.com/handsdown/home/hands-down-neu#h.bv3bay1cp21z
+  pz xq  h  g  j   #@ .: /* "! '?  
+   c  s  n  t  k   ,; a  e  i  m  
+   b  f  l  d  v   -+ u  o  y  w  
+               r   ␣  
 */
 
  
-COMB(BOOT,            QK_BOOT,          ___F___, ___Y___)
-COMB(CMB_NUM,         NUMWORD,          OS_LSFT, NAV_SPC)
-COMB(CMB_Q,           ___Q___,          ___V___, ___M___)
-COMB(CMB_CANCEL,	    CANCEL,		        ___S___, ___I___)
-
-
-
+COMB(BOOT,            QK_BOOT,          ___P___, _DQUOT_)
+COMB(CMB_NUM,         NUMWORD,          ___R___, NAV_SPC)
+COMB(CMB_Q,           ___Q___,          ___P___, ___X___)
+COMB(CMB_Z,           ___Z___,          ___X___, ___H___)
+COMB(CMB_CANCEL,	    CANCEL,		        ___C___, ___M___)
 
 
 COMB(CMB_AT,           KC_AT,          ___R___, ___N___)
@@ -57,8 +69,8 @@ COMB(CMB_SCLN,         KC_SCLN,        ___H___, LPAREN)
 
 // thumbs numbers 
 COMB(CMB_0,         KC_0,          OS_LSFT, ___H___)
-COMB(CMB_2,         KC_2,          OS_LSFT, ___A___)
-COMB(CMB_4,         KC_4,          OS_LSFT, ___E___)
+COMB(CMB_2,         KC_2,          OS_LSFT, ___E___)
+COMB(CMB_4,         KC_4,          OS_LSFT, ___A___)
 COMB(CMB_6,         KC_6,          OS_LSFT, ___I___)
 COMB(CMB_8,         KC_8,          OS_LSFT, ___L___)
 COMB(CMB_1,         KC_1,          NAV_SPC, ___C___)

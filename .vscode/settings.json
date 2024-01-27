@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "*.tw": "tiddlywiki5",
+        "*.tw5": "tiddlywiki5",
+        "*.tid": "tid",
+        "*.meta": "tid",
+        "*.multids": "multids",
+        "totem.h": "c"
+    }
+}
