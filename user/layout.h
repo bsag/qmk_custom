@@ -139,27 +139,27 @@ enum custom_keycodes {
 #define UM_CTL LCTL_T(KC_U)
 #define BSPACE LT(NUM, KC_BSPC)
 
-#define ___A___ RCTL_T(KC_A)
+#define ___A___ RSFT_T(KC_A)
 #define ___B___ KC_B
 #define ___C___ LCTL_T(KC_C)
-#define ___D___ KC_D
+#define ___D___ MEH_T(KC_D)
 #define ___E___ RGUI_T(KC_E)
 #define ___F___ KC_F
 #define ___G___ KC_G
 #define ___H___ KC_H
-#define ___I___ RSFT_T(KC_I)
+#define ___I___ RALT_T(KC_I)
 #define ___J___ KC_J
 #define ___K___ KC_K
 #define ___L___ LALT_T(KC_L)
-#define ___M___ MEH_T(KC_M)
-#define ___N___ LALT_T(KC_N)
-#define ___O___ KC_O
+#define ___M___ RCTL_T(KC_M)
+#define ___N___ LGUI_T(KC_N)
+#define ___O___ MEH_T(KC_O)
 #define ___P___ KC_P
 #define ___Q___ KC_Q
 #define ___R___ KC_R
-#define ___S___ LGUI_T(KC_S)
+#define ___S___ LALT_T(KC_S)
 #define ___T___ LSFT_T(KC_T)
-#define ___U___ MEH_T(KC_U)
+#define ___U___ KC_U
 #define ___V___ KC_V
 #define ___W___ KC_W
 #define ___X___ KC_X
