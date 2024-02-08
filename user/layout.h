@@ -216,8 +216,8 @@ enum custom_keycodes {
 #define _RHODIUM \
   ___P___, ___X___, ___H___, ___G___, ___J___,      ___Z___, __DOT__, _SLASH_, _SQUOT_, _DQUOT_, \
   ___C___, ___S___, ___N___, ___T___, ___K___,      _COMMA_, ___A___, ___E___, ___I___, ___M___, \
-  ___B___, ___F___, ___L___, ___D___, ___V___,      ___Z___, ___U___, ___O___, ___Y___, ___W___, \
-           LT(UTIL,KC_BSPC), ___R___, MAG_ALT,      ENT_CTL,  NAV_SPC, LT(FUN,KC_DEL)
+  ___B___, ___F___, ___L___, ___D___, ___V___,      KC_MINS, ___U___, ___O___, ___Y___, ___W___, \
+           LT(UTIL,KC_Q), ___R___, MAG_ALT,      ENT_CTL,  NAV_SPC, LT(FUN,KC_DEL)
 
 #define _MITHRIL \
   ___W___, ___B___, ___G___, ___D___, ___Z___,      KC_SCLN, __DOT__, KC_EQL,  ___J___, _SQUOT_, \
