@@ -3,7 +3,7 @@
 # thereby completely bypassing this Makefile and our keymap header/footer!
 
 TOPLEVEL=`git rev-parse --show-toplevel`
-KEYBOARD=totem
+KEYBOARD="redox"
 KEYMAP=fride
 USER_DIR=$(realpath ./user)
 TOTEM_DIR=$(realpath ./totem)

@@ -195,35 +195,13 @@ enum custom_keycodes {
 // clang-format off
 // ----------------
 // layout wrappers inspired by https://github.com/pixelbreaker/qmk_userspace
-/*
-  f r d p v  q j u o y
-  s n t c b  . h e a i
-  z x k g w  m l ; ' ,
-*/
-#define _RECURVA \
-  ___F___, ___R___, ___D___, ___P___, ___V___,      ___Q___, ___M___, ___U___, ___O___, ___Y___, \
-  ___S___, ___N___, ___T___, ___C___, ___B___,      __DOT__, ___H___, ___E___, ___A___, ___I___, \
-  ___Z___, ___J___, ___K___, ___G___, ___W___,      ___X___, ___L___, LPAREN, RPAREN, _COMMA_, \
-           LT(UTIL,KC_BSPC), NAV_SPC, MAG_ALT,      ENT_CTL,  OS_LSFT, LT(FUN,KC_DEL)
 
-/*
-// https://sites.google.com/alanreiser.com/handsdown/home/hands-down-neu#h.bv3bay1cp21z
-  pz xq  h  g  j   #@ .: /* "! '?
-   c  s  n  t  k   ,; a  e  i  m
-   b  f  l  d  v   -+ u  o  y  w
-               r   ␣
-*/
 #define _RHODIUM \
-  ___P___, ___X___, ___H___, ___G___, ___J___,      ___Z___, __DOT__, _SLASH_, _SQUOT_, _DQUOT_, \
+  ___P___, ___X___, ___H___, ___G___, ___J___,      ___Z___, __DOT__, _SLASH_, _DQUOT_, _SQUOT_, \
   ___C___, ___S___, ___N___, ___T___, ___K___,      _COMMA_, ___A___, ___E___, ___I___, ___M___, \
   ___B___, ___F___, ___L___, ___D___, ___V___,      KC_MINS, ___U___, ___O___, ___Y___, ___W___, \
-           LT(UTIL,KC_Q), ___R___, MAG_ALT,      ENT_CTL,  NAV_SPC, LT(FUN,KC_DEL)
+           ___R___, LT(UTIL,KC_Q), MAG_ALT,      ENT_CTL, LT(FUN,KC_DEL), NAV_SPC
 
-#define _MITHRIL \
-  ___W___, ___B___, ___G___, ___D___, ___Z___,      KC_SCLN, __DOT__, KC_EQL,  ___J___, _SQUOT_, \
-  ___C___, ___N___, ___S___, ___T___, ___K___,      _COMMA_, ___I___, ___E___, ___L___, ___A___, \
-  ___Y___, ___P___, ___F___, ___M___, ___V___,      KC_SLSH, ___U___, ___O___, ___H___, KC_MINS, \
-           LT(UTIL,KC_BSPC), ___R___, MAG_ALT,      ENT_CTL,  NAV_SPC, LT(FUN,KC_DEL)
 
 #define _UTIL \
   SW_APP,  TAB_L,   TAB_R,   SW_WIN,  KC_NO,               KC_NO, KC_BSPC, KC_UP,   KC_DEL,  KC_NO, \
@@ -269,7 +247,7 @@ enum custom_keycodes {
 
 
 // Layout aliases for json keymap
-#define LAYOUT_redox(...) LAYOUT(__VA_ARGS__)
+#define LAYOUT_REDOX(...) LAYOUT(__VA_ARGS__)
 
 #define CONV_REDOX( \
   k15, k16, k17, k18, k19,        k22, k23, k24, k25, k26, \
@@ -277,9 +255,9 @@ enum custom_keycodes {
   k43, k44, k45, k46, k47,        k50, k51, k52, k53, k54, \
             k59, k60, k61,        k64, k65, k66 \
 ) \
-     KC_NO   ,KC_7    ,KC_5    ,KC_3    ,KC_1    ,KC_9    ,                                            KC_8    ,KC_0    ,KC_2    ,KC_4    ,KC_6  ,KC_NO   , \
-     KC_TAB  ,k15     ,k16     ,k17     ,k18     ,k19     ,KC_F11   ,                         KC_F12  ,k22     ,k23     ,k24     ,k25     ,k26     ,KC_BSLS , \
-     k15     ,k29     ,k30     ,k31     ,k32     ,k33     ,KC_DLR  ,                         KC_DLR   ,k36     ,k37     ,k38     ,k39     ,k40 ,    k26 , \
+     QK_BOOT   ,KC_7    ,KC_5    ,KC_3    ,KC_1    ,KC_9    ,                                            KC_8    ,KC_0    ,KC_2    ,KC_4    ,KC_6  ,KC_NO   , \
+     KC_GRV  ,k15     ,k16     ,k17     ,k18     ,k19     ,KC_F11   ,                         KC_F12  ,k22     ,k23     ,k24     ,k25     ,k26     ,KC_Q , \
+     KC_EQL  ,k29     ,k30     ,k31     ,k32     ,k33     ,KC_DLR  ,                         KC_DLR   ,k36     ,k37     ,k38     ,k39     ,k40 ,    KC_Z , \
      KC_LSFT ,k43     ,k44     ,k45     ,k46     ,k47     ,KC_NO   ,QK_BOOT ,        QK_BOOT ,KC_NO   ,k50     ,k51     ,k52     ,k53     ,k54     ,KC_RSFT , \
      KC_LCTL ,KC_LALT ,KC_LEFT ,KC_RIGHT   ,     k59     ,    k60     ,k61     ,        k64      ,k65     ,k66     ,KC_LBRC ,KC_RBRC ,KC_NO   ,KC_NO
 
