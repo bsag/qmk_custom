@@ -200,7 +200,7 @@ enum custom_keycodes {
   ___P___, ___X___, ___H___, ___G___, ___J___,      ___Z___, __DOT__, _SLASH_, _DQUOT_, _SQUOT_, \
   ___C___, ___S___, ___N___, ___T___, ___K___,      _COMMA_, ___A___, ___E___, ___I___, ___M___, \
   ___B___, ___F___, ___L___, ___D___, ___V___,      KC_MINS, ___U___, ___O___, ___Y___, ___W___, \
-           ___R___, LT(UTIL,KC_Q), MAG_ALT,      ENT_CTL, LT(FUN,KC_DEL), NAV_SPC
+           LT(UTIL,KC_Q), ___R___,  MAG_ALT,      ENT_CTL, NAV_SPC, LT(FUN,KC_DEL)
 
 
 #define _UTIL \
