@@ -23,7 +23,7 @@
 // ▝▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▘
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
- [ALPHA] = LAYOUT_TOTEM(TOTEM(_RHODIUM)),
+ [ALPHA] = LAYOUT_TOTEM(TOTEM(_NEU_VB)),
  [NUM] = LAYOUT_TOTEM(TOTEM(_NUM)),
  [SYM] = LAYOUT_TOTEM(TOTEM(_SYM)),
  [UTIL] = LAYOUT_TOTEM(TOTEM(_UTIL)),

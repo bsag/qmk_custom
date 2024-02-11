@@ -141,23 +141,23 @@ enum custom_keycodes {
 
 #define ___A___ RSFT_T(KC_A)
 #define ___B___ KC_B
-#define ___C___ LCTL_T(KC_C)
+#define ___C___ LALT_T(KC_C)
 #define ___D___ MEH_T(KC_D)
 #define ___E___ RGUI_T(KC_E)
 #define ___F___ KC_F
 #define ___G___ KC_G
-#define ___H___ KC_H
+#define ___H___ RCTL_T(KC_H)
 #define ___I___ RALT_T(KC_I)
 #define ___J___ KC_J
 #define ___K___ KC_K
 #define ___L___ LALT_T(KC_L)
-#define ___M___ RCTL_T(KC_M)
+#define ___M___ KC_M
 #define ___N___ LGUI_T(KC_N)
 #define ___O___ MEH_T(KC_O)
 #define ___P___ KC_P
 #define ___Q___ KC_Q
 #define ___R___ KC_R
-#define ___S___ LALT_T(KC_S)
+#define ___S___ LCTL_T(KC_S)
 #define ___T___ LSFT_T(KC_T)
 #define ___U___ KC_U
 #define ___V___ KC_V
@@ -196,11 +196,17 @@ enum custom_keycodes {
 // ----------------
 // layout wrappers inspired by https://github.com/pixelbreaker/qmk_userspace
 
-#define _RHODIUM \
-  ___P___, ___X___, ___H___, ___G___, ___J___,      ___Z___, __DOT__, _SLASH_, _DQUOT_, _SQUOT_, \
-  ___C___, ___S___, ___N___, ___T___, ___K___,      _COMMA_, ___A___, ___E___, ___I___, ___M___, \
-  ___B___, ___F___, ___L___, ___D___, ___V___,      KC_MINS, ___U___, ___O___, ___Y___, ___W___, \
-           LT(UTIL,KC_Q), ___R___,  MAG_ALT,      ENT_CTL, NAV_SPC, LT(FUN,KC_DEL)
+/*
+xz  wq m  g  j   #@ .: /* "! '?  
+s  c  n  t  k   ,; a  e  i  h  
+b  p  l  d  v   -+ u  o  y  f  
+r   ␣  
+*/
+#define _NEU_VB \
+  ___Z___, ___W___, ___M___, ___G___, ___J___,      KC_HASH, __DOT__, _SLASH_, _DQUOT_, _SQUOT_, \
+  ___S___, ___C___, ___N___, ___T___, ___K___,      _COMMA_, ___A___, ___E___, ___I___, ___H___, \
+  ___B___, ___P___, ___L___, ___D___, ___V___,      KC_MINS, ___U___, ___O___, ___Y___, ___F___, \
+           LT(UTIL,KC_Q), ___R___,  MAG_ALT,       ENT_CTL, NAV_SPC, LT(FUN,KC_X)
 
 
 #define _UTIL \
