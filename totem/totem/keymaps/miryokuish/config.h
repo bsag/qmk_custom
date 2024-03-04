@@ -10,7 +10,6 @@ for more options.
 
 /* QMK */
 #define TAPPING_TERM 200
-#define IGNORE_MOD_TAP_INTERRUPT /* for rolling on mod-tap keys */
 
 /* Miryoku, see https://sunaku.github.io/home-row-mods.html*/
 #define BILATERAL_COMBINATIONS_LIMIT_CHORD_TO_N_KEYS 4 /* GUI, Alt, Ctrl, Shift */
@@ -30,5 +29,5 @@ for more options.
 //#define NO_ACTION_TAPPING
 //#define NO_MUSIC_MODE
 
-#define COMBO_COUNT 26
+#define COMBO_COUNT 28
 #define COMBO_MUST_TAP_PER_COMBO

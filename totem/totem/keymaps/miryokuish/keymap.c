@@ -70,17 +70,13 @@ enum custom_keycodes {
 #define NAV LT(_NAV, KC_SPACE)
 #define NUM LT(_NUM, KC_BSPC)
 #define FUN LT(_FUN, KC_DEL)
-#define UTIL LT(_UTIL, KC_TAB)
+#define UTIL LT(_UTIL, KC_ESC)
 
 // OTHER KEY DEFINITIONS   ├───────────────────────────────────┐
 
 #define OS_SHT OSM(MOD_LSFT)
-#define PTAB S(G(KC_LBRC))
-#define NTAB S(G(KC_RBRC))
 #define BACK G(KC_LBRC)
 #define FWD G(KC_RBRC)
-#define PWIN S(G(KC_GRV)) // cycle backwards through windows of app
-#define NWIN G(KC_GRV)    // cycle forwards through windows of app
 
 #define S_CUT G(KC_X)
 #define S_COPY G(KC_C)
@@ -130,6 +126,8 @@ const uint16_t PROGMEM rpar_combo[] = {GUI_E, ALT_I, COMBO_END};
 const uint16_t PROGMEM lcbr_combo[] = {HYP_H, MEH_COM, COMBO_END};
 const uint16_t PROGMEM rcbr_combo[] = {MEH_COM, KC_DOT, COMBO_END};
 
+const uint16_t PROGMEM lt_combo[] = {KC_M, SHT_N, COMBO_END};
+const uint16_t PROGMEM gt_combo[] = {ALT_I, CTL_O, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
   COMBO(at_combo, KC_AT),
@@ -157,7 +155,9 @@ combo_t key_combos[COMBO_COUNT] = {
   COMBO(lpar_combo, KC_LPRN),
   COMBO(rpar_combo, KC_RPRN),
   COMBO(lcbr_combo, KC_LCBR),
-  COMBO(rcbr_combo, KC_RCBR)
+  COMBO(rcbr_combo, KC_RCBR),
+  COMBO(lt_combo, KC_LT),
+  COMBO(gt_combo, KC_GT)
 };
 
 
@@ -231,7 +231,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              ├─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┤
              │    A    │    R    │    S    │    T    │    G    ││    M    │    N    │    E    │    I    │    O    │    
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │  PTAB   │    Z    │    X    │    C    │    D    │    V    ││    K    │    H    │    ,;   │    .:   │   ?!    │   NTAB  │
+   │   TAB   │    Z    │    X    │    C    │    D    │    V    ││    K    │    H    │    ,;   │    .:   │   ?!    │    TAB  │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                  │  UTIL   │  NAV    │  SHIFT  ││   ENT   │    NUM  │   FUN   │  
                                  └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘*/ 
@@ -240,7 +240,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               KC_Q,     KC_W,     KC_F,     KC_P,     KC_B,      KC_J,     KC_L,     KC_U,     KC_Y,     KC_QUOT,  
               CTL_A,    ALT_R,    GUI_S,    SHT_T,    KC_G,      KC_M,     SHT_N,    GUI_E,    ALT_I,    CTL_O,    
-    PTAB,     KC_Z,     KC_X,     MEH_C,    HYP_D,    KC_V,      KC_K,     HYP_H,    MEH_COM,  KC_DOT,   KC_QUES,  NTAB,
+    KC_TAB,   KC_Z,     KC_X,     MEH_C,    HYP_D,    KC_V,      KC_K,     HYP_H,    MEH_COM,  KC_DOT,   KC_QUES,  KC_TAB,
                                   UTIL,     NAV,      OS_SHT,    KC_ENT,      NUM,      FUN
  ),
  /*
@@ -254,7 +254,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              ├─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┤
              │  CTRL   │  ALT    │  CMD    │   SHFT  │         ││         │  LEFT   │  DOWN   │  RIGHT  │  PGDN   │    
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │ BACK    │         │         │  MEH    │  HYPR   │         ││         │  PWIN   │         │   NWIN  │         │  FWD    │
+   │ BACK    │         │         │  MEH    │  HYPR   │         ││         │         │         │         │         │  FWD    │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                  │         │         │         ││   ENT   │  BSPC   │   DEL   │  
                                  └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘ */ 
@@ -263,7 +263,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               _______,  _______,  _______,  _______, _______,    _______,  KC_HOME,  KC_UP,    KC_END,   KC_PGUP,
               KC_LCTL,  KC_LALT,  KC_LGUI,  KC_LSFT, _______,    _______,  KC_LEFT,  KC_DOWN,  KC_RIGHT, KC_PGDN,  
-    BACK,     _______,  _______,  KC_MEH,   KC_HYPR, _______,    _______,  PWIN,     _______,  NWIN,      _______,   FWD,
+    BACK,     _______,  _______,  KC_MEH,   KC_HYPR, _______,    _______,  _______,  _______,  _______,  _______,   FWD,
                                   _______,  _______, _______,    KC_ENT,   KC_BSPC,   KC_DEL
  ),
  /*
@@ -287,7 +287,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
               KC_PLUS,    KC_7,    KC_8,     KC_9,    KC_ASTR,   _______,  _______,  _______,  _______, _______,
               KC_0,       KC_4,    KC_5,     KC_6,    KC_EQL,    _______,  KC_LSFT,  KC_LGUI,  KC_LALT, KC_LCTL,
     KC_LPRN,  KC_MINS,    KC_1,    KC_2,     KC_3,    KC_SLSH,   _______,  KC_HYPR,  KC_MEH,   _______, _______,  KC_RPRN, 
-                                   _______,  KC_DOT,  KC_COLN,   _______,  _______,  _______
+                                   _______,  KC_DOT,  KC_SCLN,   _______,  _______,  _______
  ),
 /*
    ╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸
