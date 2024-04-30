@@ -51,3 +51,12 @@ You can see the most recent layout [on Keyboard Layout Editor](http://www.keyboa
 ## mini3x6
 This keymap is for a 42 key Corne keyboard, but only maps the 34 keys shared with the Ferris. It's a temporary measure so that I can have the same layout on
 keyboards at home and work, until I've had a chance to build another Ferris. Likely to be temporary and not updated.
+
+## Build with Docker
+
+With Docker running, the alternative way to build any of these maps is to:
+
+```sh
+cd /path/to/qmk_firmware
+util/docker_build.sh <keyboard>:<keymap>
+```
